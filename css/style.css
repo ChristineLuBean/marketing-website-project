@@ -1,0 +1,1672 @@
+
+/*/////////////////////////////////////////////////
+///////////////////////////////////////////////////
+///////////////=TableOfContents ///////////////////
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+
+/*
+=boxModelHack
+
+=globals (no min & no max)
+    =globals.Header
+        =globals.header.styles
+        =globals.header.layout
+    =globals.mainMenu
+        =globals.mainMenu.styles
+        =globals.mainMenu.layout
+    =globals.content
+        =globals.content.styles
+        =globals.content.layout
+    =globals.footer
+        =globals.footer.styles
+        =globals.footer.layout
+    =globals.additionalStyles
+
+=medMobileAndAbove (480px min)
+    =medMobileAndAbove.Header
+        =medMobileAndAbove.header.styles
+        =medMobileAndAbove.header.layout
+    =medMobileAndAbove.mainMenu
+        =medMobileAndAbove.mainMenu.styles
+        =medMobileAndAbove.mainMenu.layout
+    =medMobileAndAbove.content
+        =medMobileAndAbove.content.styles
+        =medMobileAndAbove.content.layout
+    =medMobileAndAbove.footer
+        =medMobileAndAbove.footer.styles
+        =medMobileAndAbove.footer.layout
+    =medMobileAndAbove.additionalStyles  
+
+=smallTabletLargeMobileAndAbove (600px min)
+    =smallTabletLargeMobileAndAbove.Header
+        =smallTabletLargeMobileAndAbove.header.styles
+        =smallTabletLargeMobileAndAbove.header.layout
+    =smallTabletLargeMobileAndAbove.mainMenu
+        =smallTabletLargeMobileAndAbove.mainMenu.styles
+        =smallTabletLargeMobileAndAbove.mainMenu.layout
+    =smallTabletLargeMobileAndAbove.content
+        =smallTabletLargeMobileAndAbove.content.styles
+        =smallTabletLargeMobileAndAbove.content.layout
+    =smallTabletLargeMobileAndAbove.footer
+        =smallTabletLargeMobileAndAbove.footer.styles
+        =smallTabletLargeMobileAndAbove.footer.layout
+    =smallTabletLargeMobileAndAbove.additionalStyles  
+
+=medTabletAndAbove (768px min)
+    =medTabletAndAbove.Header
+        =medTabletAndAbove.header.styles
+        =medTabletAndAbove.header.layout
+    =medTabletAndAbove.mainMenu
+        =medTabletAndAbove.mainMenu.styles
+        =medTabletAndAbove.mainMenu.layout
+    =medTabletAndAbove.content
+        =medTabletAndAbove.content.styles
+        =medTabletAndAbove.content.layout
+    =medTabletAndAbove.footer
+        =medTabletAndAbove.footer.styles
+        =medTabletAndAbove.footer.layout
+    =medTabletAndAbove.additionalStyles
+
+=largeTabletAndAbove (1024px min)
+    =largeTabletAndAbove.Header
+        =largeTabletAndAbove.header.styles
+        =largeTabletAndAbove.header.layout
+    =largeTabletAndAbove.mainMenu
+        =largeTabletAndAbove.mainMenu.styles
+        =largeTabletAndAbove.mainMenu.layout
+    =largeTabletAndAbove.content
+        =largeTabletAndAbove.content.styles
+        =largeTabletAndAbove.content.layout
+    =largeTabletAndAbove.footer
+        =largeTabletAndAbove.footer.styles
+        =largeTabletAndAbove.footer.layout
+    =largeTabletAndAbove.additionalStyles
+
+=laptopAndAbove (1280px min)
+    =laptopAndAbove.Header
+        =laptopAndAbove.header.styles
+        =laptopAndAbove.header.layout
+    =laptopAndAbove.mainMenu
+        =laptopAndAbove.mainMenu.styles
+        =laptopAndAbove.mainMenu.layout
+    =laptopAndAbove.content
+        =laptopAndAbove.content.styles
+        =laptopAndAbove.content.layout
+    =laptopAndAbove.footer
+        =laptopAndAbove.footer.styles
+        =laptopAndAbove.footer.layout
+    =laptopAndAbove.additionalStyles
+
+=desktopAndAbove (1440px min)
+    =desktopAndAbove.Header
+        =desktopAndAbove.header.styles
+        =desktopAndAbove.header.layout
+    =desktopAndAbove.mainMenu
+        =desktopAndAbove.mainMenu.styles
+        =desktopAndAbove.mainMenu.layout
+    =desktopAndAbove.content
+        =desktopAndAbove.content.styles
+        =desktopAndAbove.content.layout
+    =desktopAndAbove.footer
+        =desktopAndAbove.footer.styles
+        =desktopAndAbove.footer.layout
+    =desktopAndAbove.additionalStyles
+
+=smallMobile (0 - 479px max)
+    =smallMobile.Header
+        =smallMobile.header.styles
+        =smallMobile.header.layout
+    =smallMobile.mainMenu
+        =smallMobile.mainMenu.styles
+        =smallMobile.mainMenu.layout
+    =smallMobile.content
+        =smallMobile.content.styles
+        =smallMobile.content.layout
+    =smallMobile.footer
+        =smallMobile.footer.styles
+        =smallMobile.footer.layout
+    =smallMobile.additionalStyles
+    
+=medMobile (480px min & 599px max)
+    =medMobile.Header
+        =medMobile.header.styles
+        =medMobile.header.layout
+    =medMobile.mainMenu
+        =medMobile.mainMenu.styles
+        =medMobile.mainMenu.layout
+    =medMobile.content
+        =medMobile.content.styles
+        =medMobile.content.layout
+    =medMobile.footer
+        =medMobile.footer.styles
+        =medMobile.footer.layout
+    =medMobile.additionalStyles
+
+=smallTabletLargeMobile (600px min & 467px max)
+    =smallTabletLargeMobile.Header
+        =smallTabletLargeMobile.header.styles
+        =smallTabletLargeMobile.header.layout
+    =smallTabletLargeMobile.mainMenu
+        =smallTabletLargeMobile.mainMenu.styles
+        =smallTabletLargeMobile.mainMenu.layout
+    =smallTabletLargeMobile.content
+        =smallTabletLargeMobile.content.styles
+        =smallTabletLargeMobile.content.layout
+    =smallTabletLargeMobile.footer
+        =smallTabletLargeMobile.footer.styles
+        =smallTabletLargeMobile.footer.layout
+    =smallTabletLargeMobile.additionalStyles
+
+=medTablet (768px min & 1023px max)
+    =medTablet.Header
+        =medTablet.header.styles
+        =medTablet.header.layout
+    =medTablet.mainMenu
+        =medTablet.mainMenu.styles
+        =medTablet.mainMenu.layout
+    =medTablet.content
+        =medTablet.content.styles
+        =medTablet.content.layout
+    =medTablet.footer
+        =medTablet.footer.styles
+        =medTablet.footer.layout
+    =medTablet.additionalStyles
+
+=largeTablet (1024px min & 1279px max)
+    =largeTablet.Header
+        =largeTablet.header.styles
+        =largeTablet.header.layout
+    =largeTablet.mainMenu
+        =largeTablet.mainMenu.styles
+        =largeTablet.mainMenu.layout
+    =largeTablet.content
+        =largeTablet.content.styles
+        =largeTablet.content.layout
+    =largeTablet.footer
+        =largeTablet.footer.styles
+        =largeTablet.footer.layout
+    =largeTablet.additionalStyles
+
+=laptop (1280px min & 1439px max)
+    =laptop.Header
+        =laptop.header.styles
+        =laptop.header.layout
+    =laptop.mainMenu
+        =laptop.mainMenu.styles
+        =laptop.mainMenu.layout
+    =laptop.content
+        =laptop.content.styles
+        =laptop.content.layout
+    =laptop.footer
+        =laptop.footer.styles
+        =laptop.footer.layout
+    =laptop.additionalStyles
+
+=desktop (1440px min & 2559px max)
+    =desktop.header
+        =desktop.header.styles
+        =desktop.header.layout
+    =desktop.mainMenu
+        =desktop.mainMenu.styles
+        =desktop.mainMenu.layout
+    =desktop.content
+        =desktop.content.styles
+        =desktop.content.layout
+    =desktop.footer
+        =desktop.footer.styles
+        =desktop.footer.layout
+    =desktop.additionalStyles
+
+    =widescreenDesktop (2560 min and no max)
+    =widescreenDesktop.Header
+        =widescreenDesktop.header.styles
+        =widescreenDesktop.header.layout
+    =widescreenDesktop.mainMenu
+        =widescreenDesktop.mainMenu.styles
+        =widescreenDesktop.mainMenu.layout
+    =widescreenDesktop.content
+        =widescreenDesktop.content.styles
+        =widescreenDesktop.content.layout
+    =widescreenDesktop.footer
+        =widescreenDesktop.footer.styles
+        =widescreenDesktop.footer.layout
+    =widescreenDesktop.additionalStyles
+*/
+
+/*/////////////////////////////////////////////////
+///////////////////////////////////////////////////
+//////////////// =boxModelHack ////////////////////
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/*/////////////////////////////////////////////////
+///////////////////////////////////////////////////
+///////////////// = globals ///////////////////////
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+
+
+/******************************************
+/* =globals.header
+/*******************************************/
+
+/* =globals.header.styles
+---------------------------- */
+body{
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    font-size: 1vw;
+    background-color: #f7f8fb;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+header {
+    background-color: #1c2433;
+    background: rgba(28, 36, 51, .95);
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    padding: 3vw 11.5vw 2vw 11.5vw;
+    z-index: 3;
+}
+.circleIcon {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+.mainNav {
+    width: 65%;
+}
+.mainMenu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+p {
+    font-weight: 300;
+    line-height: 2rem;  
+    margin: .5vw 0;
+}
+    /* =globals.header.layout
+    ---------------------------- */
+
+.hamburger{
+    display: none;
+}
+
+
+/******************************************
+/* =globals.content
+/*******************************************/
+
+
+    /* =globals.content.styles
+    ---------------------------- */
+
+    /*-----Home Section Start-----*/
+
+.socialMediaSection ul {
+    padding: 6vw 11.5vw 0 11.5vw;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.socialMediaSection img {
+    width: 50px;
+}
+.services {
+    padding: 6vw 11.5vw;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 3fr 1fr 1fr;
+    grid-gap: 2vw;
+    height: 50vw;
+}
+.servicesLeft{
+    grid-row: span 2;
+    grid-column: 1 / 2;
+    padding-right: 10vw;
+}
+.services1{
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+}
+.services2{
+    grid-row: 1 / 2;
+    grid-column: 3 / 4;
+}
+.services3{
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+}
+.services4{
+    grid-row: 2 / 3;
+    grid-column: 3 / 4;
+}
+h3 {
+    text-transform: uppercase;
+    font-size: .9rem;
+    font-weight: 700;
+    color: #949fab;
+}
+h2 {
+    font-size: 1.8rem;
+    margin: 1vw 0;
+    line-height: 3rem;
+}
+.services p {
+    font-weight: 300;
+    line-height: 2rem;  
+    margin: .5vw 0;
+}
+.services img {
+    width: 50px;
+}
+
+.servicesImageCard{
+    border-radius: 15px;
+    background: #ffffff;
+    box-shadow:  -9px 9px 18px #c9c9c9;
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+    
+}
+.servicesImageCard span {
+    font-size: 1rem;
+    margin-top: 1vw;
+}
+.blueBG {
+    background: rgb(43,53,73);
+    background: linear-gradient(to bottom left, rgba(43,53,73,1) 0%, rgba(15,20,33,1) 68%, rgba(11,15,27,1) 100%);
+    height: 65%;
+    color: white;
+}
+.grayBG {
+        background: #dee0ea;
+        height: 65%;
+}
+h4 {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.servicesImageCardInfo {
+    padding: 1.5rem;
+    text-align:center
+}
+.servicesImageCard p {
+    margin-top: 1vw;
+    font-size: .9rem;
+    font-weight: 300;
+    line-height: 1.2rem;
+}
+
+.flexCenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.flexTop {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+
+.aboutUs img, .bigExampleSection img {
+    height: 30px;
+}
+.bigExampleSection {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10% 8%;
+}
+.imageExample {
+    background-color:#dee0e9;
+    border-radius: 5px;
+    height: 30vw;
+    width: 42%;
+}
+.moreInfo {
+    padding-right: 15%;
+    margin-bottom: 5%;
+}
+.infoRight {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 30vw;
+}
+.placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 25%;
+    width: 30%;
+    border-radius: 2px;
+}
+
+
+
+
+
+
+
+
+
+
+    .features {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 10vw 2vw 6vw 2vw;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: repeat(19, 1fr);
+        grid-gap: 2vw;
+  
+    }
+      .features::before {
+        content: '';
+        position: absolute;
+        background-color: #1c2433;
+        background: rgb(28, 36, 51);
+        -webkit-clip-path: polygon(0 21%, 100% 0, 100% 90%, 0 100%);
+        clip-path: polygon(0 30%, 100% 0, 100% 100%, 0 100%);
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    .featuresCards {
+        border-radius: 25px;
+        background: linear-gradient(225deg, #ffffff, #dfdfdf);
+        box-shadow:  -11px 11px 22px hsl(220, 24%, 12%, .3);
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        padding: 2vw;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        position: relative;
+        z-index: 1;
+    }
+    .features h4 {
+        margin: 1vw 0 .8vw 0;
+    }
+    .feat1 {
+        grid-row: 1 / 2;
+        grid-column: 4 / 8; 
+    }
+    .feat2 {
+        grid-row: 1 / 2;
+        grid-column: 8 / 12;
+    }
+    .feat2 h4 {
+        margin: 0 auto;
+    }
+    .feat3 {
+        grid-row: 1 / 2;
+        grid-column: 12 / 16;
+    }
+    .feat4 {
+        grid-row: 1 / 2;
+        grid-column: 16 / 20;
+    }
+    .feat5 {
+        grid-row: 2 / 3;
+        grid-column: 1 / 5;
+    }
+    .feat6 {
+        grid-row: 2 / 3;
+        grid-column: 5 / 9;
+    }
+    .feat7 {
+        grid-row: 2 / 3;
+        grid-column: 9 / 13;
+    }
+    .feat8 {
+        grid-row: 2 / 3;
+        grid-column: 13 / 17;
+    }
+    .wireBox {
+        border: 3px solid #101522;
+        border-radius: 3px;
+        height: 30px;
+        width: 30px;
+    }
+    .featuresCards h4 {
+        font-size: 1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    .featuresCards p {
+        font-size: 1rem;    
+        font-weight: 300;
+    }
+
+
+
+    .orderSection {
+        background-color: #1c2433;
+        background: rgba(28, 36, 51, .95);
+    }
+    /* =globals.content.layout
+    ---------------------------- */
+
+
+.grayButton {
+    background-color: #3c424f; 
+    color: #e1e2e3;
+}
+.grayButton:hover {
+    color:#19202f;
+    background-color: white;
+}
+.whiteButton {
+    background-color: #fff; 
+    color: #19202f;
+}
+.whiteButton:hover {
+    color:#e1e2e3;
+    background-color: #3c424f;
+}
+/******************************************
+/* =globals.footer
+/*******************************************/
+
+
+    /* =globals.footer.styles
+    ---------------------------- */
+
+    /* =globals.footer.layout
+    ---------------------------- */
+footer {
+    padding: 3vw 11.5vw 0 11.5vw;
+}
+.footerNav {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.phoneEmail p, .footerNav ul li{
+    font-size: .9rem;
+    line-height: 1.3rem;
+    width: 100%;
+    font-weight: 300;
+    margin: .5vw 0;
+}
+.footerNav b {
+    font-weight: 400;
+}
+.products {
+    column-count: 2;
+    column-gap: 5vw;
+}
+.footCol {
+ width: 16.66%; 
+}
+.socialMedia {
+    display: flex;
+}
+.phoneEmail li {
+    display: flex;
+    align-items: center;
+}
+.phoneEmail .wireBox {
+    display: inline-block;
+    height: 25px;
+    width: 25px;
+    margin-right: 1vw;
+}
+/******************************************
+/* =globals.additionalStyles
+/*******************************************/
+
+    /* =globals.additionalStyles.styles
+    ---------------------------- */
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+ .hamburger {
+    padding: 15px 15px;
+    display: inline-block;
+    cursor: pointer;
+    transition-property: opacity, filter;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    overflow: visible; 
+}
+
+.hamburger:hover {
+    opacity: 0.7; 
+}
+.hamburger.is-active:hover {
+    opacity: 0.7; 
+}
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+    background-color: #fff; 
+}
+
+.hamburger-box {
+    width: 40px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+}
+
+.hamburger-inner {
+    display: block;
+    top: 50%;
+    margin-top: -2px; }
+.hamburger-inner, .hamburger-inner::before, 
+.hamburger-inner::after {
+    width: 40px;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+ }
+.hamburger-inner::before, .hamburger-inner::after {
+    content: "";
+    display: block; 
+}
+.hamburger-inner::before {
+    top: -10px; 
+}
+.hamburger-inner::after {
+    bottom: -10px; 
+}
+.hamburger--spin .hamburger-inner {
+    transition-duration: 0.22s;
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); 
+}
+.hamburger--spin .hamburger-inner::before {
+    transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in; 
+}
+.hamburger--spin .hamburger-inner::after {
+    transition: bottom 0.1s 0.25s ease-in, 
+    transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19); 
+}
+.hamburger--spin.is-active .hamburger-inner {
+    transform: rotate(225deg);
+    transition-delay: 0.12s;
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); 
+}
+.hamburger--spin.is-active .hamburger-inner::before {
+    top: 0;
+    opacity: 0;
+    transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out; 
+}
+.hamburger--spin.is-active .hamburger-inner::after {
+    bottom: 0;
+    transform: rotate(-90deg);
+    transition: bottom 0.1s ease-out,
+    transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); 
+}
+
+.secMargin {
+    padding: 3vw 11.5vw 2vw 11.5vw;
+}
+
+/*/////////////////////////////////////////////////
+///////////////////////////////////////////////////
+//////// =smallMobile (0 - 479px max) ////////////
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+
+
+/* @media (max-width: 479px) { */
+
+    /******************************************
+    /* =smallMobile.header
+    /*******************************************/
+
+
+        /* =smallMobile.header.styles
+        ---------------------------- */
+
+        /* =smallMobile.header.layout
+        ---------------------------- */
+        
+    /*******************************************/
+    /* =smallMobile.content
+    /*******************************************/
+
+
+        /* =smallMobile.content.styles
+        ---------------------------- */
+
+        /* =smallMobile.content.layout
+        ---------------------------- */
+
+    /******************************************
+    /* =smallMobile.footer
+    /*******************************************/
+
+
+    /* =smallMobile.footer.styles
+    ---------------------------- */
+
+    /* =smallMobile.footer.layout
+    ---------------------------- */
+
+
+    /******************************************
+    /* =smallMobile.additionalStyles
+    /*******************************************/
+
+
+    /* =smallMobile.additionalStyles.styles
+    ---------------------------- */
+   
+
+    /* =smallMobile.additionalStyles.layout
+    ---------------------------- */
+
+/* } */
+ /*/////////////////////////////////////////////////
+///////////////////////////////////////////////////
+////// = medMobile (480px min & 599px max) ////////
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+
+
+/* @media (min-width: 480px) and (max-width: 599px) { */
+
+    /******************************************
+    /* = medMobile.header
+    /*******************************************/
+
+
+        /* =medMobile.header.styles
+        ---------------------------- */
+
+
+        
+        /* =medMobile.header.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =medMobile.content
+    /*******************************************/
+
+
+        /* =medMobile.content.styles
+        ---------------------------- */
+
+        /* =medMobile.content.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =medMobile.footer
+    /*******************************************/
+
+
+        /* =medMobile.footer.styles
+        ---------------------------- */
+
+        /* =medMobile.footer.layout
+        ---------------------------- */
+
+/******************************************
+/* =medMobile.additionalStyles
+/*******************************************/
+
+    /* =smallMobile.additionalStyles.styles
+    ---------------------------- */
+    
+
+    /* =smallMobile.additionalStyles.layout
+    ---------------------------- */
+ 
+/* } */
+
+
+/*/////////////////////////////////////////////////
+///////////////////////////////////////////////////
+/ =smallTabletLargeMobile (600px min & 767px max) /
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+
+
+/* @media (min-width: 600px) and (max-width: 767px) { */
+
+    /******************************************
+    /* =smallTabletLargeMobile.header
+    /*******************************************/
+
+
+    /* =smallTabletLargeMobile.header.styles
+    ---------------------------- */
+   
+    /* =smallTabletLargeMobile.header.layout
+     ---------------------------- */
+
+
+    /******************************************
+    /* =smallTabletLargeMobile.content
+    /*******************************************/
+
+
+        /* =smallTabletLargeMobile.content.styles
+        ---------------------------- */
+
+        /* =smallTabletLargeMobile.content.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =smallTabletLargeMobile.footer
+    /*******************************************/
+
+
+        /* =smallTabletLargeMobile.footer.styles
+        ---------------------------- */
+
+        /* =smallTabletLargeMobile.footer.layout
+        ---------------------------- */
+        
+        
+        
+    /******************************************
+    /* =smallTabletLargeMobile.additionalStyles
+    /*******************************************/
+
+    /* =smallMobile.additionalStyles.styles
+    ---------------------------- */
+   
+
+    /* =smallMobile.additionalStyles.layout
+    ---------------------------- */
+
+/* } */
+ 
+ /*/////////////////////////////////////////////////
+///////////////////////////////////////////////////
+/////// =medTablet (768px min & 1023px max) ///////
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+
+
+@media (max-width: 970px) {
+    /* (min-width: 768px) and */
+    /******************************************
+    /*=medTablet.header
+    /*******************************************/
+
+
+        /* =medTablet.header.styles
+        ---------------------------- */
+        header {
+            background-color: #1c2433;
+            background: rgba(28, 36, 51, .95);
+            display: flex;
+            align-items: center; 
+            justify-content: space-between;
+            position: fixed;
+            width: 100%;
+            padding: 3vw 11.5vw 2vw 11.5vw;
+            z-index: 1;
+        }
+
+
+        .home {
+            width: 100%;
+            height: auto;
+            position: relative;
+            padding: 12vw 11.5vw 2vw 11.5vw;
+          }
+          .home::after {
+            content: '';
+            display: block;
+            position: absolute;
+            background-color: #1c2433;
+            background: rgb(28, 36, 51);
+            z-index: -1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80%;
+          }
+          .homeContent {
+            color: #fff;
+            height: 20vw;
+          }
+          .mainNav{
+              display: none;
+              position: absolute;
+          }
+          .hamburger {
+              display: inline-block;
+              width: 50px;
+              height: 50px;
+          }
+        .tabletBezel {
+            border-radius: 25px;
+            background: linear-gradient(225deg, #ffffff, #dfdfdf);
+            box-shadow:  -11px 11px 22px hsl(220, 24%, 12%, .3);
+            width: 100%;
+            height: 50vw;
+            margin: 0 auto;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .tabletScreen {
+            background-color: #dee0e9;
+            background: url("../images/tabletScreen.png") left / cover no-repeat;
+            box-shadow: inset -3px 3px 10px hsl(0, 0%, 50%, .5);
+            height: 90%;
+            width: 85%;
+            border-radius: 3px;
+        }
+        /* =medTablet.header.layout
+        ---------------------------- */
+        
+        .homeContent {
+            width:67%;
+            min-width: 300px;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        h1 {
+            margin: 1.5vw 0 .3vw 0;
+            font-size: 2rem;
+            line-height: 2.5rem;
+            width: 100%;
+        }
+        .home p {
+            line-height: 1.5rem;
+            font-size: 1rem;
+            font-weight: 300;
+            width: 100%;
+            margin-bottom: 10%;
+        }
+        .homeButton {
+            display: none;
+        }
+        .button {
+            display: inline-block;
+            border-radius: 5px;
+            text-align: center;
+            font-size: .8vw;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+        .smallButton {
+            width: 7.4vw;
+            padding: 1vw 0;
+            text-align: center;
+            margin: 0;
+        }
+        .longButton {
+            width: 100%;
+            font-weight: 700;
+            max-width: 13vw;
+            padding: 1vw 0;
+            text-align: center;
+        }
+
+    /******************************************
+    /* =medTablet.content
+    /*******************************************/
+
+
+        /* =medTablet.content.styles
+        ---------------------------- */
+
+        /* =medTablet.content.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =medTablet.footer
+    /*******************************************/
+
+
+        /* =medTablet.footer.styles
+        ---------------------------- */
+
+        /* =medTablet.footer.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =medTablet.additionalStyles
+    /*******************************************/
+
+
+    /* =smallMobile.additionalStyles.styles
+    ---------------------------- */
+   
+
+    /* =smallMobile.additionalStyles.layout
+    ---------------------------- */
+}
+ /*/////////////////////////////////////////////////
+///////////////////////////////////////////////////
+///// =largeTablet (1024px min & 1279px max) //////
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+
+
+@media (min-width: 971px) and (max-width: 1279px) {
+    /******************************************
+    /* =largeTablet.header
+    /*******************************************/
+
+
+        /* =largeTablet.header.styles
+        ---------------------------- */
+        .home {
+            width: 100%;
+            height: auto;
+            position: relative;
+            padding: 12vw 18vw 2vw 11.5vw;
+          }
+          .home::after {
+            content: '';
+            display: block;
+            position: absolute;
+            background-color: #1c2433;
+            background: rgb(28, 36, 51);
+            z-index: -1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 72%, 0 100%);
+          }
+          .mainMenu {
+              font-size: 1.2rem;
+          }
+          .homeContent {
+            color: #fff;
+            height: 26.5vw;
+          }
+          .grid{
+            display: grid;
+            grid-column-gap: 10%;
+        }
+        .grid-1-2 {
+            grid-template-rows: 1fr;
+            grid-template-columns: 46.5% 53.5%;
+        }
+        .tabletBezel {
+            /* margin-top: 10vw; */
+            border-radius: 25px;
+            background: linear-gradient(225deg, #ffffff, #dfdfdf);
+            box-shadow:  -11px 11px 22px hsl(220, 24%, 12%, .3);
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .tabletScreen {
+            background-color: #dee0e9;
+            background: url("../images/tabletScreen.png") left / cover no-repeat;
+            box-shadow: inset -3px 3px 10px hsl(0, 0%, 50%, .5);
+            height: 90%;
+            width: 85%;
+            border-radius: 3px;
+        }
+        /* =largeTablet.header.layout
+        ---------------------------- */
+        h1 {
+            margin: 1.5vw 0 .3vw 0;
+            font-size: 1.5rem;
+            line-height: 2.5rem;
+            width: 100%;
+        }
+        .home p {
+            line-height: 1.5rem;
+            font-weight: 300;
+            width: 100%;
+            margin-bottom: 5%;
+        }
+        .homeButton .button {
+            margin-right: 3.5vw;
+        }
+        .button {
+            display: inline-block;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1.3vw;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+        .smallButton {
+            width: 7.4vw;
+            padding: 1vw 0;
+            text-align: center;
+            margin: 0;
+        }
+        .longButton {
+            width: 100%;
+            font-weight: 700;
+            max-width: 13vw;
+            padding: 1vw 0;
+            text-align: center;
+        }
+
+    /******************************************
+    /* =largeTablet.content
+    /*******************************************/
+
+
+        /* =largeTablet.content.styles
+        ---------------------------- */
+
+        /* =largeTablet.content.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =largeTablet.footer
+    /*******************************************/
+
+
+        /* =largeTablet.footer.styles
+        ---------------------------- */
+
+        /* =largeTablet.footer.layout
+        ---------------------------- */
+
+    /******************************************
+    /* =largeTablet.additionalStyles
+    /*******************************************/
+
+
+    /* =smallMobile.additionalStyles.styles
+   
+
+    /* =smallMobile.additionalStyles.layout
+    ---------------------------- */
+    .hamburger {
+        display: none;
+    }
+  
+}
+/*/////////////////////////////////////////////////
+///////////////////////////////////////////////////
+/////// =laptop (1280px min & 1439px max) ////////
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+
+
+@media (min-width: 1150px) and  (max-width: 1282px) {
+
+    /******************************************
+    /* =laptop.header
+    /*******************************************/
+
+
+        /* =laptop.header.styles
+        ---------------------------- */
+        .home {
+            width: 100%;
+            height: auto;
+            position: relative;
+            padding: 12vw 18vw 2vw 11.5vw;
+          }
+          .home::after {
+            content: '';
+            display: block;
+            position: absolute;
+            background-color: #1c2433;
+            background: rgb(28, 36, 51);
+            z-index: -1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 72%, 0 100%);
+          }
+          .homeContent {
+            color: #fff;
+            height: 26.5vw;
+          }
+          .grid{
+            display: grid;
+            grid-column-gap: 10%;
+        }
+        .grid-1-2 {
+            grid-template-rows: 1fr;
+            grid-template-columns: 46.5% 53.5%;
+        }
+        .tabletBezel {
+            /* margin-top: 10vw; */
+            border-radius: 25px;
+            background: linear-gradient(225deg, #ffffff, #dfdfdf);
+            box-shadow:  -11px 11px 22px hsl(220, 24%, 12%, .3);
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .tabletScreen {
+            background-color: #dee0e9;
+            background: url("../images/tabletScreen.png") left / cover no-repeat;
+            box-shadow: inset -3px 3px 10px hsl(0, 0%, 50%, .5);
+            height: 90%;
+            width: 85%;
+            border-radius: 3px;
+        }
+        /* =laptop.header.layout
+        ---------------------------- */
+              
+
+        h1 {
+            margin: 1.5vw 0 .3vw 0;
+            font-size: 1.8rem;
+            line-height: 2.5rem;
+            width: 91%;
+        }
+        .home p {
+            line-height: 1.5rem;
+            font-weight: 300;
+            width: 82%;
+            margin-bottom: 5%;
+        }
+        .homeButton .button {
+            margin-right: 3.5vw;
+        }
+        .button {
+            display: inline-block;
+            border-radius: 5px;
+            text-align: center;
+            font-size: .8vw;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+        .smallButton {
+            width: 7.4vw;
+            padding: 1vw 0;
+            text-align: center;
+            margin: 0;
+        }
+        .longButton {
+            width: 100%;
+            font-weight: 700;
+            max-width: 13vw;
+            padding: 1vw 0;
+            text-align: center;
+        }
+    /******************************************
+    /* =laptop.content
+    /*******************************************/
+
+
+        /* =laptop.content.styles
+        ---------------------------- */
+
+        /* =laptop.content.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =laptop.footer
+    /*******************************************/
+
+
+        /* =laptop.footer.styles
+        ---------------------------- */
+
+        /* =laptop.footer.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =laptop.additionalStyles
+    /*******************************************/
+    .hamburger {
+        display: none;
+    }
+  
+   
+
+
+}
+ 
+
+/*/////////////////////////////////////////////////
+///////////////////////////////////////////////////
+/////// =desktop (1440px min & 2559px max) ////////
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+
+
+@media (min-width: 1283px) and (max-width: 1715px) {
+/* */
+    /******************************************
+    /* =desktop.header
+    /*******************************************/
+
+
+        /* =desktop.header.styles
+        ---------------------------- */
+        .home {
+            width: 100%;
+            height: auto;
+            position: relative;
+            padding: 12vw 18vw 2vw 11.5vw;
+          }
+          .home::after {
+            content: '';
+            display: block;
+            position: absolute;
+            background-color: #1c2433;
+            background: rgb(28, 36, 51);
+            z-index: -1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 72%, 0 100%);
+          }
+          .homeContent {
+            color: #fff;
+            height: 26.5vw;
+          }
+          .grid{
+            display: grid;
+            grid-column-gap: 10%;
+        }
+        .grid-1-2 {
+            grid-template-rows: 1fr;
+            grid-template-columns: 46.5% 53.5%;
+        }
+        .tabletBezel {
+            /* margin-top: 10vw; */
+            border-radius: 25px;
+            background: linear-gradient(225deg, #ffffff, #dfdfdf);
+            box-shadow:  -11px 11px 22px hsl(220, 24%, 12%, .3);
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .tabletScreen {
+            background-color: #dee0e9;
+            background: url("../images/tabletScreen.png") left / cover no-repeat;
+            box-shadow: inset -3px 3px 10px hsl(0, 0%, 50%, .5);
+            height: 90%;
+            width: 85%;
+            border-radius: 3px;
+        }
+        /* =desktop.header.layout
+        ---------------------------- */
+       
+
+        h1 {
+            margin: 1.5vw 0 .3vw 0;
+            font-size: 2.2rem;
+            line-height: 3rem;
+            width: 91%;
+        }
+        .home p {
+            line-height: 1.8rem;
+            font-weight: 300;
+            width: 82%;
+            margin-bottom: 5%;
+        }
+        .homeButton .button {
+            margin-right: 3.5vw;
+        }
+        .button {
+            display: inline-block;
+            border-radius: 5px;
+            text-align: center;
+            font-size: .8vw;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+        .smallButton {
+            width: 7.4vw;
+            padding: 1vw 0;
+            text-align: center;
+            margin: 0;
+        }
+        .longButton {
+            width: 100%;
+            font-weight: 700;
+            max-width: 13vw;
+            padding: 1vw 0;
+            text-align: center;
+        }
+    /******************************************
+    /* =desktop.content
+    /*******************************************/
+
+
+        /* =desktop.content.styles
+        ---------------------------- */
+
+        /* =desktop.content.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =desktop.footer
+    /*******************************************/
+
+
+        /* =desktop.footer.styles
+        ---------------------------- */
+
+        /* =desktop.footer.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =desktop.additionalStyles
+    /*******************************************/
+    .hamburger {
+        display: none;
+    }
+  
+
+
+
+}
+ 
+
+/*/////////////////////////////////////////////////
+///////////////////////////////////////////////////
+//// =widescreenDesktop (2560 min and no max) /////
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+
+
+@media (min-width: 1716px) {
+
+    /******************************************
+    /* =widescreenDesktop.header
+    /*******************************************/
+
+
+        /* =widescreenDesktop.header.styles
+        ---------------------------- */
+        h1 {
+            margin: 1.5vw 0 .8vw 0;
+            font-size: 2.9rem;
+            line-height: 3.3rem;
+            width: 91%;
+        }
+        .home p {
+            line-height: 2.3rem;
+            font-weight: 300;
+            width: 82%;
+            margin-bottom: 12%;
+        }
+        .homeButton .button {
+            margin-right: 3.5vw;
+        }
+        .button {
+            display: inline-block;
+            border-radius: 5px;
+            text-align: center;
+            font-size: .8vw;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+        .smallButton {
+            width: 7.4vw;
+            padding: 1vw 0;
+            text-align: center;
+            margin: 0;
+        }
+        .longButton {
+            width: 100%;
+            font-weight: 700;
+            max-width: 13vw;
+            padding: 1vw 0;
+            text-align: center;
+        }
+        
+        /* =widescreenDesktop.header.layout
+        ---------------------------- */
+        .home {
+            width: 100%;
+            height: auto;
+            position: relative;
+            padding: 12vw 18vw 2vw 11.5vw;
+          }
+          .home::after {
+            content: '';
+            display: block;
+            position: absolute;
+            background-color: #1c2433;
+            background: rgb(28, 36, 51);
+            z-index: -1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 72%, 0 100%);
+          }
+          .homeContent {
+            color: #fff;
+            height: 26.5vw;
+          }
+          .grid{
+            display: grid;
+            grid-column-gap: 10%;
+        }
+        .grid-1-2 {
+            grid-template-rows: 1fr;
+            grid-template-columns: 46.5% 53.5%;
+        }
+        .tabletBezel {
+            /* margin-top: 10vw; */
+            border-radius: 25px;
+            background: linear-gradient(225deg, #ffffff, #dfdfdf);
+            box-shadow:  -11px 11px 22px hsl(220, 24%, 12%, .3);
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .tabletScreen {
+            background-color: #dee0e9;
+            background: url("../images/tabletScreen.png") left / cover no-repeat;
+            box-shadow: inset -3px 3px 10px hsl(0, 0%, 50%, .5);
+            height: 90%;
+            width: 85%;
+            border-radius: 3px;
+        }
+
+    /******************************************
+    /* =widescreenDesktop.content
+    /*******************************************/
+
+
+        /* =widescreenDesktop.content.styles
+        ---------------------------- */
+
+        /* =widescreenDesktop.content.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =widescreenDesktop.footer
+    /*******************************************/
+
+
+        /* =widescreenDesktop.footer.styles
+        ---------------------------- */
+
+        /* =widescreenDesktop.footer.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =widescreenDesktop.additionalStyles
+    /*******************************************/
+
+  .hamburger {
+      display: none;
+  }
+
+}

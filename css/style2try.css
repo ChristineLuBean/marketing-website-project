@@ -1,0 +1,2826 @@
+
+/*/////////////////////////////////////////////////
+///////////////////////////////////////////////////
+///////////////=TableOfContents ///////////////////
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+
+/*
+=boxModelHack
+
+=globals (no min & no max)
+    =globals.Header
+        =globals.header.styles
+        =globals.header.layout
+    =globals.mainMenu
+        =globals.mainMenu.styles
+        =globals.mainMenu.layout
+    =globals.content
+        =globals.content.styles
+        =globals.content.layout
+    =globals.footer
+        =globals.footer.styles
+        =globals.footer.layout
+    =globals.additionalStyles
+
+=medMobileAndAbove (480px min)
+    =medMobileAndAbove.Header
+        =medMobileAndAbove.header.styles
+        =medMobileAndAbove.header.layout
+    =medMobileAndAbove.mainMenu
+        =medMobileAndAbove.mainMenu.styles
+        =medMobileAndAbove.mainMenu.layout
+    =medMobileAndAbove.content
+        =medMobileAndAbove.content.styles
+        =medMobileAndAbove.content.layout
+    =medMobileAndAbove.footer
+        =medMobileAndAbove.footer.styles
+        =medMobileAndAbove.footer.layout
+    =medMobileAndAbove.additionalStyles  
+
+=smallTabletLargeMobileAndAbove (600px min)
+    =smallTabletLargeMobileAndAbove.Header
+        =smallTabletLargeMobileAndAbove.header.styles
+        =smallTabletLargeMobileAndAbove.header.layout
+    =smallTabletLargeMobileAndAbove.mainMenu
+        =smallTabletLargeMobileAndAbove.mainMenu.styles
+        =smallTabletLargeMobileAndAbove.mainMenu.layout
+    =smallTabletLargeMobileAndAbove.content
+        =smallTabletLargeMobileAndAbove.content.styles
+        =smallTabletLargeMobileAndAbove.content.layout
+    =smallTabletLargeMobileAndAbove.footer
+        =smallTabletLargeMobileAndAbove.footer.styles
+        =smallTabletLargeMobileAndAbove.footer.layout
+    =smallTabletLargeMobileAndAbove.additionalStyles  
+
+=medTabletAndAbove (768px min)
+    =medTabletAndAbove.Header
+        =medTabletAndAbove.header.styles
+        =medTabletAndAbove.header.layout
+    =medTabletAndAbove.mainMenu
+        =medTabletAndAbove.mainMenu.styles
+        =medTabletAndAbove.mainMenu.layout
+    =medTabletAndAbove.content
+        =medTabletAndAbove.content.styles
+        =medTabletAndAbove.content.layout
+    =medTabletAndAbove.footer
+        =medTabletAndAbove.footer.styles
+        =medTabletAndAbove.footer.layout
+    =medTabletAndAbove.additionalStyles
+
+=largeTabletAndAbove (1024px min)
+    =largeTabletAndAbove.Header
+        =largeTabletAndAbove.header.styles
+        =largeTabletAndAbove.header.layout
+    =largeTabletAndAbove.mainMenu
+        =largeTabletAndAbove.mainMenu.styles
+        =largeTabletAndAbove.mainMenu.layout
+    =largeTabletAndAbove.content
+        =largeTabletAndAbove.content.styles
+        =largeTabletAndAbove.content.layout
+    =largeTabletAndAbove.footer
+        =largeTabletAndAbove.footer.styles
+        =largeTabletAndAbove.footer.layout
+    =largeTabletAndAbove.additionalStyles
+
+=laptopAndAbove (1280px min)
+    =laptopAndAbove.Header
+        =laptopAndAbove.header.styles
+        =laptopAndAbove.header.layout
+    =laptopAndAbove.mainMenu
+        =laptopAndAbove.mainMenu.styles
+        =laptopAndAbove.mainMenu.layout
+    =laptopAndAbove.content
+        =laptopAndAbove.content.styles
+        =laptopAndAbove.content.layout
+    =laptopAndAbove.footer
+        =laptopAndAbove.footer.styles
+        =laptopAndAbove.footer.layout
+    =laptopAndAbove.additionalStyles
+
+=desktopAndAbove (1440px min)
+    =desktopAndAbove.Header
+        =desktopAndAbove.header.styles
+        =desktopAndAbove.header.layout
+    =desktopAndAbove.mainMenu
+        =desktopAndAbove.mainMenu.styles
+        =desktopAndAbove.mainMenu.layout
+    =desktopAndAbove.content
+        =desktopAndAbove.content.styles
+        =desktopAndAbove.content.layout
+    =desktopAndAbove.footer
+        =desktopAndAbove.footer.styles
+        =desktopAndAbove.footer.layout
+    =desktopAndAbove.additionalStyles
+
+=smallMobile (0 - 479px max)
+    =smallMobile.Header
+        =smallMobile.header.styles
+        =smallMobile.header.layout
+    =smallMobile.mainMenu
+        =smallMobile.mainMenu.styles
+        =smallMobile.mainMenu.layout
+    =smallMobile.content
+        =smallMobile.content.styles
+        =smallMobile.content.layout
+    =smallMobile.footer
+        =smallMobile.footer.styles
+        =smallMobile.footer.layout
+    =smallMobile.additionalStyles
+    
+=medMobile (480px min & 599px max)
+    =medMobile.Header
+        =medMobile.header.styles
+        =medMobile.header.layout
+    =medMobile.mainMenu
+        =medMobile.mainMenu.styles
+        =medMobile.mainMenu.layout
+    =medMobile.content
+        =medMobile.content.styles
+        =medMobile.content.layout
+    =medMobile.footer
+        =medMobile.footer.styles
+        =medMobile.footer.layout
+    =medMobile.additionalStyles
+
+=smallTabletLargeMobile (600px min & 467px max)
+    =smallTabletLargeMobile.Header
+        =smallTabletLargeMobile.header.styles
+        =smallTabletLargeMobile.header.layout
+    =smallTabletLargeMobile.mainMenu
+        =smallTabletLargeMobile.mainMenu.styles
+        =smallTabletLargeMobile.mainMenu.layout
+    =smallTabletLargeMobile.content
+        =smallTabletLargeMobile.content.styles
+        =smallTabletLargeMobile.content.layout
+    =smallTabletLargeMobile.footer
+        =smallTabletLargeMobile.footer.styles
+        =smallTabletLargeMobile.footer.layout
+    =smallTabletLargeMobile.additionalStyles
+
+=medTablet (768px min & 1023px max)
+    =medTablet.Header
+        =medTablet.header.styles
+        =medTablet.header.layout
+    =medTablet.mainMenu
+        =medTablet.mainMenu.styles
+        =medTablet.mainMenu.layout
+    =medTablet.content
+        =medTablet.content.styles
+        =medTablet.content.layout
+    =medTablet.footer
+        =medTablet.footer.styles
+        =medTablet.footer.layout
+    =medTablet.additionalStyles
+
+=largeTablet (1024px min & 1279px max)
+    =largeTablet.Header
+        =largeTablet.header.styles
+        =largeTablet.header.layout
+    =largeTablet.mainMenu
+        =largeTablet.mainMenu.styles
+        =largeTablet.mainMenu.layout
+    =largeTablet.content
+        =largeTablet.content.styles
+        =largeTablet.content.layout
+    =largeTablet.footer
+        =largeTablet.footer.styles
+        =largeTablet.footer.layout
+    =largeTablet.additionalStyles
+
+=laptop (1280px min & 1439px max)
+    =laptop.Header
+        =laptop.header.styles
+        =laptop.header.layout
+    =laptop.mainMenu
+        =laptop.mainMenu.styles
+        =laptop.mainMenu.layout
+    =laptop.content
+        =laptop.content.styles
+        =laptop.content.layout
+    =laptop.footer
+        =laptop.footer.styles
+        =laptop.footer.layout
+    =laptop.additionalStyles
+
+=desktop (1440px min & 2559px max)
+    =desktop.header
+        =desktop.header.styles
+        =desktop.header.layout
+    =desktop.mainMenu
+        =desktop.mainMenu.styles
+        =desktop.mainMenu.layout
+    =desktop.content
+        =desktop.content.styles
+        =desktop.content.layout
+    =desktop.footer
+        =desktop.footer.styles
+        =desktop.footer.layout
+    =desktop.additionalStyles
+
+    =widescreenDesktop (2560 min and no max)
+    =widescreenDesktop.Header
+        =widescreenDesktop.header.styles
+        =widescreenDesktop.header.layout
+    =widescreenDesktop.mainMenu
+        =widescreenDesktop.mainMenu.styles
+        =widescreenDesktop.mainMenu.layout
+    =widescreenDesktop.content
+        =widescreenDesktop.content.styles
+        =widescreenDesktop.content.layout
+    =widescreenDesktop.footer
+        =widescreenDesktop.footer.styles
+        =widescreenDesktop.footer.layout
+    =widescreenDesktop.additionalStyles
+*/
+
+/*/////////////////////////////////////////////////
+///////////////////////////////////////////////////
+//////////////// =boxModelHack ////////////////////
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/*/////////////////////////////////////////////////
+///////////////////////////////////////////////////
+///////////////// = globals ///////////////////////
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+
+
+/******************************************
+/* =globals.header
+/*******************************************/
+
+
+    /* =globals.header.styles
+    ---------------------------- */
+
+body{
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    background: #f7f8fb;
+}
+h1 {
+    font-size: 7vw;
+    font-weight: 300;
+    line-height: 10vw;
+    max-width: 83%;
+    margin-bottom: 2vw;
+}
+li {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+}
+.whiteText {
+    color: #f7f8fb;
+}
+.whiteHoverText:hover {
+    color: #f7f8fb;
+}
+
+
+.blueBackground {
+    background-color: #19202f;
+}
+.button {
+    display: inline-block;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.2vw;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.grayButton {
+    background-color: #3c424f; 
+    color: #e1e2e3;
+}
+.grayButton:hover {
+    color:#19202f;
+    background-color: white;
+}
+.whiteButton {
+    background-color: #fff; 
+    color: #19202f;
+}
+.whiteButton:hover {
+    color:#e1e2e3;
+    background-color: #3c424f;
+}
+.mainMenu {
+    display: none;
+    visibility: hidden;
+}
+
+.accountLink {
+    margin-left: 10%;
+    font-size: 1.2vw;
+    text-transform: uppercase;
+    width: 30%;
+}
+
+.accountLink span {
+    display: inline-block;
+    margin-right: 3%;
+}
+
+.tabletBezel {
+    /* margin-top: 10vw; */
+    border-radius: 25px;
+    background: linear-gradient(225deg, #ffffff, #dfdfdf);
+    box-shadow:  -11px 11px 22px hsl(220, 24%, 12%, .3);
+}
+
+.tabletScreen {
+    background-color: #dee0e9;
+    background: url("../images/tabletScreen.png") left / cover no-repeat;
+    box-shadow: inset -3px 3px 10px hsl(0, 0%, 50%, .5)
+}
+    
+    /* =globals.header.layout
+    ---------------------------- */
+.homeNav {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+}
+nav {
+    width: 100%;
+    position: fixed;
+    z-index:2;
+}
+.homeBox {
+    position: relative;
+    height: 140vw;
+}
+header {
+    height: 100vw;
+    width: 100%;
+}
+.homeContentSection {
+    margin: 0 auto;
+    /* padding: 26vw 0 0 0; */
+}
+.bigP{
+    font-size: 4.2vw;
+    font-weight: 300;
+    line-height: 8vw;
+    margin-bottom: 2.5vw;
+}
+.homeContentButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    display: none;
+    margin-bottom: 4.5vw;
+}
+
+/*height="228px" width="331px"*/
+/*height="855px" width="1240px"*/
+
+.tabletBezel {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tabletScreen {
+    height: 90%;
+    width: 85%;
+    border-radius: 3px;
+}
+.socialMediaSection {
+    display: none;
+}
+.services {
+    margin: 40vw 0 0 0;
+}
+
+
+
+
+/******************************************
+/* =globals.content
+/*******************************************/
+
+
+    /* =globals.content.styles
+    ---------------------------- */
+
+    /* =globals.content.layout
+    ---------------------------- */
+
+
+/******************************************
+/* =globals.footer
+/*******************************************/
+
+
+    /* =globals.footer.styles
+    ---------------------------- */
+
+    /* =globals.footer.layout
+    ---------------------------- */
+
+/******************************************
+/* =globals.additionalStyles
+/*******************************************/
+
+
+
+.button {
+    display: inline-block;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.3vw;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.smallButton {
+    width: 7.4vw;
+    padding: 1.6vw 0;
+    text-align: center;
+    margin: 0;
+}
+.longButton {
+    width: 100%;
+    font-weight: 700;
+    max-width: 23.9vw;
+    padding: 1.8vw 0;
+    text-align: center;
+}
+
+
+
+/*/////////////////////////////////////////////////
+///////////////////////////////////////////////////
+//////// =medMobileAndAbove (480px min) //////////
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+
+
+@media (min-width: 480px) {
+
+/******************************************
+/* =medMobileAndAbove.header
+/*******************************************/
+
+
+/*  =medMobileAndAbove.header.styles
+---------------------------- */
+    .homeNav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .homeBox {
+        position: relative;
+        top: -10vw;
+        height: 134vw;
+    }
+/*  =medMobileAndAbove.header.layout
+---------------------------- */
+
+
+    /******************************************
+    /*  =medMobileAndAbove.content
+    /*******************************************/
+
+
+        /*  =medMobileAndAbove.content.styles
+        ---------------------------- */
+
+        /*  =medMobileAndAbove.content.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /*  =medMobileAndAbove.footer
+    /*******************************************/
+
+
+        /*  =medMobileAndAbove.footer.styles
+        ---------------------------- */
+
+        /*  =medMobileAndAbove.footer.layout
+
+
+    /******************************************
+    /*  =medMobileAndAbove.additionalStyles
+    /*******************************************/
+
+
+
+}
+
+
+
+/*/////////////////////////////////////////////////
+///////////////////////////////////////////////////
+/////// =smallTabletLargeMobileAndAbove ///////////
+//////////////// (600px min) //////////////////////
+//////////////////////////////////////////////////*/
+
+
+@media (min-width: 600px) {
+
+/******************************************
+/* =smallTabletLargeMobileAndAbove.header
+/*******************************************/
+
+
+    /* =smallTabletLargeMobileAndAbove.header.styles
+    ---------------------------- */
+
+
+    /* =smallTabletLargeMobileAndAbove.header.layout
+    ---------------------------- */
+
+    .homeBox {
+        position: relative;
+        top: -10vw;
+        height: 140vw;
+    }
+    .homeNav {
+        padding: 1% 9% 1% 7%;
+    }
+
+    .services {
+        margin: 28vw 0 0 0;
+    }
+/******************************************
+/* =smallTabletLargeMobileAndAbove.content
+/*******************************************/
+
+
+    /* =smallTabletLargeMobileAndAbove.content.styles
+    ---------------------------- */
+
+    /* =smallTabletLargeMobileAndAbove.content.layout
+    ---------------------------- */
+
+
+/******************************************
+/* =smallTabletLargeMobileAndAbove.footer
+/*******************************************/
+
+
+    /* =smallTabletLargeMobileAndAbove.footer.styles
+    ---------------------------- */
+
+    /* smallTabletLargeMobileAndAbove.footer.layout
+    ---------------------------- */
+
+
+/******************************************
+/* =smallTabletLargeMobileAndAbove.additionalStyles
+/*******************************************/
+
+
+
+}
+
+/*/////////////////////////////////////////////////
+///////////////////////////////////////////////////
+////////////// =medTabletAndAbove /////////////////
+///////////////////(min 768px)/////////////////////
+//////////////////////////////////////////////////*/
+
+
+@media (min-width: 768px) {
+
+    /******************************************
+    /* =medTabletAndAbove.header
+    /*******************************************/
+
+
+
+        /* =medTabletAndAbove.header.styles
+        ---------------------------- */
+        .homeNav {
+            background-color: #19202f;
+            background-color: hsla(221, 31%, 14%, .95);
+            color:#babec8;
+        }
+
+        /* =medTabletAndAbove.header.layout
+        ---------------------------- */
+
+        .bigP{
+            font-size: 3vw;
+            font-weight: 300;
+            line-height: 5.5vw;
+            margin-bottom: 2.5vw;
+        }
+ 
+        .homeBox {
+            position: relative;
+            top: -10vw;
+            height: 126vw;
+        }
+        .homeNav {
+            padding: 1% 10% 1% 8%;
+        }
+        
+        .services {
+            margin:22vw 0 0 0;
+        }
+    /******************************************
+    /* =medTabletAndAbove.content
+    /*******************************************/
+
+
+        /* =medTabletAndAbove.content.styles
+        ---------------------------- */
+
+        /* =medTabletAndAbove.content.layout
+        ---------------------------- */
+
+    /******************************************
+    /*=medTabletAndAbove.footer
+    /*******************************************/
+
+
+        /* =medTabletAndAbove.footer.styles
+        ---------------------------- */
+
+        /* =medTabletAndAbove.footer.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =medTabletAndAbove.additionalStyles
+    /*******************************************/
+ 
+ 
+
+
+}
+
+
+/*/////////////////////////////////////////////////
+///////////////////////////////////////////////////
+////////////// =largeTabletAndAbove //////////////
+/////////////////////(1024px min)//////////////////
+//////////////////////////////////////////////////*/
+
+
+@media (min-width: 1024px) {
+
+    /******************************************
+    /* =largeTabletAndAbove.header
+    /*******************************************/
+
+
+        /* =largeTabletAndAbove.header.styles
+        ---------------------------- */
+        h1 {
+            font-size: 5.25vw;
+            line-height: 7vw;
+        }
+        .bigP{
+            font-size: 3vw;
+            line-height: 4vw;
+            margin-bottom: 2.5vw;
+        } 
+
+        /* =largeTabletAndAbove.header.layout
+        ---------------------------- */
+        .diagonalBox {
+            transform: skewY(-6.5deg);
+            z-index: 0;
+        }
+        .unskew {
+            margin: 0 auto;
+            transform: skewY(6.5deg);
+        }
+        .homeNav {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            align-items: center;
+            padding: 2% 9.5%;
+            }
+        .homeContentButtons {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin: 7vw 0;
+        }
+        .smallButton {
+            width: 7.4vw;
+            padding: 1.6vw 0;
+            text-align: center;
+            margin: 0;
+        }
+        .longButton {
+            width: 100%;
+            font-weight: 700;
+            max-width: 20.9vw;
+            padding: 1.9vw 0;
+            text-align: center;
+        }
+        .mainMenu {
+            width: 58.5%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .mainMenu li {
+            display: flex;
+            align-items: center;
+        }
+        .mainMenu {
+            display: flex;
+            visibility:visible;
+        }
+        .homeBox {
+            position: relative;
+            top: -10vw;
+            height: 120vw;
+        }
+    /* .homeContentSection {
+            padding-top: 24vw;
+    } */
+
+
+
+    /******************************************
+    /* =largeTabletAndAbove.content
+    /*******************************************/
+
+
+        /* =largeTabletAndAbove.content.styles
+        ---------------------------- */
+
+        /* =largeTabletAndAbove.content.layout
+        ---------------------------- */
+
+            .hamburger {
+                display: none;
+            }
+
+
+
+
+    /******************************************
+    /* =largeTabletAndAbove.footer
+    /*******************************************/
+
+
+        /* =largeTabletAndAbove.footer.styles
+        ---------------------------- */
+
+        /* =largeTabletAndAbove.footer.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =largeTabletAndAbove.additionalStyles
+    /*******************************************/
+ 
+
+
+}
+
+ 
+/*/////////////////////////////////////////////////
+///////////////////////////////////////////////////
+///////// =laptopAndAbove (1280px min.) ///////////
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+
+
+@media (min-width: 1280px) {
+
+    /******************************************
+    /* =laptopAndAbove.header
+    /*******************************************/
+
+
+        /* laptopAndAbove.header.styles
+        ---------------------------- */
+        h1 {
+            font-size: 1.7vw;
+            font-weight: 300;
+            line-height: 2.5vw;
+            max-width: 100%;
+            margin-bottom: 1vw;
+        }
+        .bigP{
+            font-size: 1vw;
+            font-weight: 300;
+            line-height: 1.5vw;
+            margin-bottom: 2.5vw;
+        }
+        /* laptopAndAbove.header.layout
+        ---------------------------- */
+        .homeNav {
+            padding: 1% 6.5%;
+            }
+
+        .mainMenu {
+            width: 52.5%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .homeContentButtons {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin: 1vw 0;
+        }
+
+        .smallButton {
+            width: 7.4vw;
+            padding: 1.6vw 0;
+            text-align: center;
+            margin: 0;
+        }
+        .longButton {
+            width: 100%;
+            font-weight: 700;
+            max-width: 12.9vw;
+            padding: 1.8vw 0;
+            text-align: center;
+        }
+        .homeBox {
+            position: relative;
+            top: -12vw;
+            height: 56vw;
+        }
+        .homeContentSection {
+            position: absolute;
+            top: 28.5vw;
+            display: flex;
+            justify-content: center;
+            /* padding: 0 6.7vw 0 6vw; */
+        }   
+        .grid{
+            display: grid;
+            grid-column-gap: 10%;
+        }
+        .grid-1-2 {
+            grid-template-rows: 1fr;
+            grid-template-columns: 60% 40%;
+        }
+        /* .tabletBezel {
+            margin-top: 0vw;
+            width: 40vw;
+            height: 30vw;
+        } */
+
+        .homeContentButtons {
+            display: inline-block;
+            margin-bottom: 0;
+        }
+        .socialMediaSection {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 8.2%;
+        }
+        .socialMediaSection ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 48.5%;
+        }
+        .socialMediaSection li {
+            display: inline-block;
+        }
+        .socialMediaSection img {
+            width: 4vw;
+            height: auto;
+        }
+        .socialMediaSection .twitter {
+            width: 2.5vw;
+        }
+        .socialMediaSection .huge {
+            width: 3vw;
+        }
+    /******************************************
+    /* laptopAndAbove.content
+    /*******************************************/
+
+
+        /* laptopAndAbove.content.styles
+        ---------------------------- */
+
+        /* laptopAndAbove.content.layout
+        ---------------------------- */
+        .homeNav {
+            padding: 1% 10%;
+            }
+        .homeContentSection {
+            position: absolute;
+            top: 28.5vw;
+            /* padding: 0 10vw; */
+        }   
+        .services {
+            margin: 10vw 0 0 0;
+        }
+
+    /******************************************
+    /* laptopAndAbove.footer
+    /*******************************************/
+
+
+        /* laptopAndAbove.footer.styles
+        ---------------------------- */
+
+        /* laptopAndAbove.footer.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* laptopAndAbove.additionalStyles
+    /*******************************************/
+ 
+ 
+
+}
+
+
+/*/////////////////////////////////////////////////
+///////////////////////////////////////////////////
+////////// = desktopAndAbove (1440 min) ///////////
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+
+
+@media (min-width: 1440px) {
+
+    /******************************************
+    /* = desktopAndAbove.header
+    /*******************************************/
+
+
+        /* =desktopAndAboveheader.styles
+        ---------------------------- */
+        .homeNav {
+            padding: 1% 15%;
+            }
+        /* .homeContentSection {
+            padding: 0 15vw;
+        }    */
+
+        /* =desktopAndAboveheader.layout
+        ---------------------------- */
+
+    /******************************************
+    /* =desktopAndAbovecontent
+    /*******************************************/
+
+
+        /* =desktopAndAbovecontent.styles
+        ---------------------------- */
+
+        /* =desktopAndAbovecontent.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* desktopAndAbovefooter
+    /*******************************************/
+
+
+        /* desktopAndAbovefooter.styles
+        ---------------------------- */
+
+        /* desktopAndAbovefooter.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* desktopAndAboveadditionalStyles
+    /*******************************************/
+
+
+
+}
+  
+
+/*/////////////////////////////////////////////////
+///////////////////////////////////////////////////
+//////// =smallMobile (0 - 479px max) ////////////
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+
+
+@media (max-width: 479px) {
+
+    /******************************************
+    /* =smallMobile.header
+    /*******************************************/
+
+
+        /* =smallMobile.header.styles
+        ---------------------------- */
+
+        /* =smallMobile.header.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =smallMobile.content
+    /*******************************************/
+
+
+        /* =smallMobile.content.styles
+        ---------------------------- */
+
+        /* =smallMobile.content.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =smallMobile.footer
+    /*******************************************/
+
+
+    /* =smallMobile.footer.styles
+    ---------------------------- */
+
+    /* =smallMobile.footer.layout
+    ---------------------------- */
+
+
+    /******************************************
+    /* =smallMobile.additionalStyles
+    /*******************************************/
+
+
+
+}
+ 
+
+ /*/////////////////////////////////////////////////
+///////////////////////////////////////////////////
+////// = medMobile (480px min & 599px max) ////////
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+
+
+@media (min-width: 480px) and (max-width: 599px) {
+
+    /******************************************
+    /* = medMobile.header
+    /*******************************************/
+
+
+        /* =medMobile.header.styles
+        ---------------------------- */
+        
+    .homeContentSection {
+        margin: 0 auto;
+        /* padding: 18vw 0 0 0; */
+
+        /* =medMobile.header.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =medMobile.content
+    /*******************************************/
+
+
+        /* =medMobile.content.styles
+        ---------------------------- */
+
+        /* =medMobile.content.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =medMobile.footer
+    /*******************************************/
+
+
+        /* =medMobile.footer.styles
+        ---------------------------- */
+
+        /* =medMobile.footer.layout
+        ---------------------------- */
+
+/******************************************
+/* =medMobile.additionalStyles
+/*******************************************/
+
+
+
+}
+ 
+
+/*/////////////////////////////////////////////////
+///////////////////////////////////////////////////
+/ =smallTabletLargeMobile (600px min & 767px max) /
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+
+
+@media (min-width: 600px) and (max-width: 767px) {
+
+    /******************************************
+    /* =smallTabletLargeMobile.header
+    /*******************************************/
+
+
+        /* =smallTabletLargeMobile.header.styles
+        ---------------------------- */
+
+        /* =smallTabletLargeMobile.header.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =smallTabletLargeMobile.content
+    /*******************************************/
+
+
+        /* =smallTabletLargeMobile.content.styles
+        ---------------------------- */
+
+        /* =smallTabletLargeMobile.content.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =smallTabletLargeMobile.footer
+    /*******************************************/
+
+
+        /* =smallTabletLargeMobile.footer.styles
+        ---------------------------- */
+
+        /* =smallTabletLargeMobile.footer.layout
+        ---------------------------- */
+
+    /******************************************
+    /* =smallTabletLargeMobile.additionalStyles
+    /*******************************************/
+
+
+
+}
+ 
+ /*/////////////////////////////////////////////////
+///////////////////////////////////////////////////
+/////// =medTablet (768px min & 1023px max) ///////
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+
+
+@media (min-width: 678px) and (max-width: 1023px) {
+
+    /******************************************
+    /*=medTablet.header
+    /*******************************************/
+
+
+        /* =medTablet.header.styles
+        ---------------------------- */
+
+        /* =medTablet.header.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =medTablet.content
+    /*******************************************/
+
+
+        /* =medTablet.content.styles
+        ---------------------------- */
+
+        /* =medTablet.content.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =medTablet.footer
+    /*******************************************/
+
+
+        /* =medTablet.footer.styles
+        ---------------------------- */
+
+        /* =medTablet.footer.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =medTablet.additionalStyles
+    /*******************************************/
+
+
+
+}
+ 
+ 
+ /*/////////////////////////////////////////////////
+///////////////////////////////////////////////////
+///// =largeTablet (1024px min & 1279px max) //////
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+
+    /******************************************
+    /* ==largeTablet.header
+    /*******************************************/
+
+
+        /* =largeTablet.header.styles
+        ---------------------------- */
+
+        /* =largeTablet.header.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =largeTablet.content
+    /*******************************************/
+
+
+        /* =largeTablet.content.styles
+        ---------------------------- */
+
+        /* =largeTablet.content.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =largeTablet.footer
+    /*******************************************/
+
+
+        /* =largeTablet.footer.styles
+        ---------------------------- */
+
+        /* =largeTablet.footer.layout
+        ---------------------------- */
+
+    /******************************************
+    /* =largeTablet.additionalStyles
+    /*******************************************/
+
+
+
+}
+ 
+
+/*/////////////////////////////////////////////////
+///////////////////////////////////////////////////
+/////// =laptop (1280px min & 1439px max) ////////
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+
+
+@media (min-width: 1280px) and (max-width: 1439px) {
+
+    /******************************************
+    /* =laptop.header
+    /*******************************************/
+
+
+        /* =laptop.header.styles
+        ---------------------------- */
+
+        /* =laptop.header.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =laptop.content
+    /*******************************************/
+
+
+        /* =laptop.content.styles
+        ---------------------------- */
+
+        /* =laptop.content.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =laptop.footer
+    /*******************************************/
+
+
+        /* =laptop.footer.styles
+        ---------------------------- */
+
+        /* =laptop.footer.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =laptop.additionalStyles
+    /*******************************************/
+
+
+
+}
+ 
+
+/*/////////////////////////////////////////////////
+///////////////////////////////////////////////////
+/////// =desktop (1440px min & 2559px max) ////////
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+
+
+@media (min-width: 1440px) and (max-width: 2559px) {
+
+    /******************************************
+    /* =desktop.header
+    /*******************************************/
+
+
+        /* =desktop.header.styles
+        ---------------------------- */
+
+        /* =desktop.header.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =desktop.content
+    /*******************************************/
+
+
+        /* =desktop.content.styles
+        ---------------------------- */
+
+        /* =desktop.content.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =desktop.footer
+    /*******************************************/
+
+
+        /* =desktop.footer.styles
+        ---------------------------- */
+
+        /* =desktop.footer.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =desktop.additionalStyles
+    /*******************************************/
+
+
+
+}
+ 
+
+/*/////////////////////////////////////////////////
+///////////////////////////////////////////////////
+//// =widescreenDesktop (2560 min and no max) /////
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+
+
+@media (min-width: 2560px) {
+
+    /******************************************
+    /* =widescreenDesktop.header
+    /*******************************************/
+
+
+        /* =widescreenDesktop.header.styles
+        ---------------------------- */
+        .homeBox {
+            position: relative;
+            top: -6vw;
+            height: 43vw;
+        }
+
+
+        /* =widescreenDesktop.header.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =widescreenDesktop.content
+    /*******************************************/
+
+
+        /* =widescreenDesktop.content.styles
+        ---------------------------- */
+
+        /* =widescreenDesktop.content.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =widescreenDesktop.footer
+    /*******************************************/
+
+
+        /* =widescreenDesktop.footer.styles
+        ---------------------------- */
+
+        /* =widescreenDesktop.footer.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =widescreenDesktop.additionalStyles
+    /*******************************************/
+
+
+}
+
+
+/*/////////////////////////////////////////////////
+///////////////////////////////////////////////////
+///////////////=TableOfContents ///////////////////
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+
+/*
+=boxModelHack
+
+=globals (no min & no max)
+    =globals.Header
+        =globals.header.styles
+        =globals.header.layout
+    =globals.mainMenu
+        =globals.mainMenu.styles
+        =globals.mainMenu.layout
+    =globals.content
+        =globals.content.styles
+        =globals.content.layout
+    =globals.footer
+        =globals.footer.styles
+        =globals.footer.layout
+    =globals.additionalStyles
+
+=medMobileAndAbove (480px min)
+    =medMobileAndAbove.Header
+        =medMobileAndAbove.header.styles
+        =medMobileAndAbove.header.layout
+    =medMobileAndAbove.mainMenu
+        =medMobileAndAbove.mainMenu.styles
+        =medMobileAndAbove.mainMenu.layout
+    =medMobileAndAbove.content
+        =medMobileAndAbove.content.styles
+        =medMobileAndAbove.content.layout
+    =medMobileAndAbove.footer
+        =medMobileAndAbove.footer.styles
+        =medMobileAndAbove.footer.layout
+    =medMobileAndAbove.additionalStyles  
+
+=smallTabletLargeMobileAndAbove (600px min)
+    =smallTabletLargeMobileAndAbove.Header
+        =smallTabletLargeMobileAndAbove.header.styles
+        =smallTabletLargeMobileAndAbove.header.layout
+    =smallTabletLargeMobileAndAbove.mainMenu
+        =smallTabletLargeMobileAndAbove.mainMenu.styles
+        =smallTabletLargeMobileAndAbove.mainMenu.layout
+    =smallTabletLargeMobileAndAbove.content
+        =smallTabletLargeMobileAndAbove.content.styles
+        =smallTabletLargeMobileAndAbove.content.layout
+    =smallTabletLargeMobileAndAbove.footer
+        =smallTabletLargeMobileAndAbove.footer.styles
+        =smallTabletLargeMobileAndAbove.footer.layout
+    =smallTabletLargeMobileAndAbove.additionalStyles  
+
+=medTabletAndAbove (768px min)
+    =medTabletAndAbove.Header
+        =medTabletAndAbove.header.styles
+        =medTabletAndAbove.header.layout
+    =medTabletAndAbove.mainMenu
+        =medTabletAndAbove.mainMenu.styles
+        =medTabletAndAbove.mainMenu.layout
+    =medTabletAndAbove.content
+        =medTabletAndAbove.content.styles
+        =medTabletAndAbove.content.layout
+    =medTabletAndAbove.footer
+        =medTabletAndAbove.footer.styles
+        =medTabletAndAbove.footer.layout
+    =medTabletAndAbove.additionalStyles
+
+=largeTabletAndAbove (1024px min)
+    =largeTabletAndAbove.Header
+        =largeTabletAndAbove.header.styles
+        =largeTabletAndAbove.header.layout
+    =largeTabletAndAbove.mainMenu
+        =largeTabletAndAbove.mainMenu.styles
+        =largeTabletAndAbove.mainMenu.layout
+    =largeTabletAndAbove.content
+        =largeTabletAndAbove.content.styles
+        =largeTabletAndAbove.content.layout
+    =largeTabletAndAbove.footer
+        =largeTabletAndAbove.footer.styles
+        =largeTabletAndAbove.footer.layout
+    =largeTabletAndAbove.additionalStyles
+
+=laptopAndAbove (1280px min)
+    =laptopAndAbove.Header
+        =laptopAndAbove.header.styles
+        =laptopAndAbove.header.layout
+    =laptopAndAbove.mainMenu
+        =laptopAndAbove.mainMenu.styles
+        =laptopAndAbove.mainMenu.layout
+    =laptopAndAbove.content
+        =laptopAndAbove.content.styles
+        =laptopAndAbove.content.layout
+    =laptopAndAbove.footer
+        =laptopAndAbove.footer.styles
+        =laptopAndAbove.footer.layout
+    =laptopAndAbove.additionalStyles
+
+=desktopAndAbove (1440px min)
+    =desktopAndAbove.Header
+        =desktopAndAbove.header.styles
+        =desktopAndAbove.header.layout
+    =desktopAndAbove.mainMenu
+        =desktopAndAbove.mainMenu.styles
+        =desktopAndAbove.mainMenu.layout
+    =desktopAndAbove.content
+        =desktopAndAbove.content.styles
+        =desktopAndAbove.content.layout
+    =desktopAndAbove.footer
+        =desktopAndAbove.footer.styles
+        =desktopAndAbove.footer.layout
+    =desktopAndAbove.additionalStyles
+
+=smallMobile (0 - 479px max)
+    =smallMobile.Header
+        =smallMobile.header.styles
+        =smallMobile.header.layout
+    =smallMobile.mainMenu
+        =smallMobile.mainMenu.styles
+        =smallMobile.mainMenu.layout
+    =smallMobile.content
+        =smallMobile.content.styles
+        =smallMobile.content.layout
+    =smallMobile.footer
+        =smallMobile.footer.styles
+        =smallMobile.footer.layout
+    =smallMobile.additionalStyles
+    
+=medMobile (480px min & 599px max)
+    =medMobile.Header
+        =medMobile.header.styles
+        =medMobile.header.layout
+    =medMobile.mainMenu
+        =medMobile.mainMenu.styles
+        =medMobile.mainMenu.layout
+    =medMobile.content
+        =medMobile.content.styles
+        =medMobile.content.layout
+    =medMobile.footer
+        =medMobile.footer.styles
+        =medMobile.footer.layout
+    =medMobile.additionalStyles
+
+=smallTabletLargeMobile (600px min & 467px max)
+    =smallTabletLargeMobile.Header
+        =smallTabletLargeMobile.header.styles
+        =smallTabletLargeMobile.header.layout
+    =smallTabletLargeMobile.mainMenu
+        =smallTabletLargeMobile.mainMenu.styles
+        =smallTabletLargeMobile.mainMenu.layout
+    =smallTabletLargeMobile.content
+        =smallTabletLargeMobile.content.styles
+        =smallTabletLargeMobile.content.layout
+    =smallTabletLargeMobile.footer
+        =smallTabletLargeMobile.footer.styles
+        =smallTabletLargeMobile.footer.layout
+    =smallTabletLargeMobile.additionalStyles
+
+=medTablet (768px min & 1023px max)
+    =medTablet.Header
+        =medTablet.header.styles
+        =medTablet.header.layout
+    =medTablet.mainMenu
+        =medTablet.mainMenu.styles
+        =medTablet.mainMenu.layout
+    =medTablet.content
+        =medTablet.content.styles
+        =medTablet.content.layout
+    =medTablet.footer
+        =medTablet.footer.styles
+        =medTablet.footer.layout
+    =medTablet.additionalStyles
+
+=largeTablet (1024px min & 1279px max)
+    =largeTablet.Header
+        =largeTablet.header.styles
+        =largeTablet.header.layout
+    =largeTablet.mainMenu
+        =largeTablet.mainMenu.styles
+        =largeTablet.mainMenu.layout
+    =largeTablet.content
+        =largeTablet.content.styles
+        =largeTablet.content.layout
+    =largeTablet.footer
+        =largeTablet.footer.styles
+        =largeTablet.footer.layout
+    =largeTablet.additionalStyles
+
+=laptop (1280px min & 1439px max)
+    =laptop.Header
+        =laptop.header.styles
+        =laptop.header.layout
+    =laptop.mainMenu
+        =laptop.mainMenu.styles
+        =laptop.mainMenu.layout
+    =laptop.content
+        =laptop.content.styles
+        =laptop.content.layout
+    =laptop.footer
+        =laptop.footer.styles
+        =laptop.footer.layout
+    =laptop.additionalStyles
+
+=desktop (1440px min & 2559px max)
+    =desktop.header
+        =desktop.header.styles
+        =desktop.header.layout
+    =desktop.mainMenu
+        =desktop.mainMenu.styles
+        =desktop.mainMenu.layout
+    =desktop.content
+        =desktop.content.styles
+        =desktop.content.layout
+    =desktop.footer
+        =desktop.footer.styles
+        =desktop.footer.layout
+    =desktop.additionalStyles
+
+    =widescreenDesktop (2560 min and no max)
+    =widescreenDesktop.Header
+        =widescreenDesktop.header.styles
+        =widescreenDesktop.header.layout
+    =widescreenDesktop.mainMenu
+        =widescreenDesktop.mainMenu.styles
+        =widescreenDesktop.mainMenu.layout
+    =widescreenDesktop.content
+        =widescreenDesktop.content.styles
+        =widescreenDesktop.content.layout
+    =widescreenDesktop.footer
+        =widescreenDesktop.footer.styles
+        =widescreenDesktop.footer.layout
+    =widescreenDesktop.additionalStyles
+*/
+
+/*/////////////////////////////////////////////////
+///////////////////////////////////////////////////
+//////////////// =boxModelHack ////////////////////
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/*/////////////////////////////////////////////////
+///////////////////////////////////////////////////
+///////////////// = globals ///////////////////////
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+
+
+/******************************************
+/* =globals.header
+/*******************************************/
+
+    /* =globals.header.styles
+    ---------------------------- */
+body{
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    font-size: 1vw;
+    background: #f7f8fb;
+}
+
+.blueBackground {
+    background-color: rgb(28, 36, 51);
+} 
+.parent {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+  }
+  .parent::after {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: purple;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  }
+  
+  .inner {
+    display: flex;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    top: 400px;
+    z-index: 2;
+    margin: 0 auto;
+    background-color: yellow;
+    align-items: center; 
+    justify-content: center;
+  }
+.homeNav {
+    background-color: #19202f;
+    background-color: hsla(221, 31%, 14%, .95);
+    color:#babec8;
+}
+.whiteText {
+    color: #f7f8fb;
+}
+.grayText {
+    color: #7e838c;
+}
+a.grayText:hover {
+    color: #7e838c;
+}
+
+li {
+    list-style-type: none;
+}
+.mainMenu li {
+    text-transform: uppercase;
+    /* font-size: 1.2vw; */
+}
+
+a {
+    text-decoration: none;
+}
+.tabletBezel {
+    /* margin-top: 10vw; */
+    border-radius: 25px;
+    background: linear-gradient(225deg, #ffffff, #dfdfdf);
+    box-shadow:  -11px 11px 22px hsl(220, 24%, 12%, .3);
+}
+.tabletScreen {
+    background-color: #dee0e9;
+    background: url("../images/tabletScreen.png") left / cover no-repeat;
+    box-shadow: inset -3px 3px 10px hsl(0, 0%, 50%, .5)
+}
+    /* =globals.header.layout
+    ---------------------------- */
+
+    .homeNav {
+        position: fixed;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+    .mainMenu {
+        position: absolute;
+        visibility: hidden;
+    }
+
+    .homeBox {
+        position: absolute;
+        z-index: -1;
+    }
+    .homeBoxTop {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: -1;
+    }
+    .homeBoxClip {
+        display: hidden;
+        position: absolute;
+        width: 100%;
+        height: 20vw;
+        z-index: -1
+    }
+    .homeContentSection {
+        display: relative;
+        top: 0;
+        padding: 10vw;
+        z-index: 1;
+    }
+    .grid{
+        display: grid;
+        grid-column-gap: 10%;
+    }
+    .grid-1-2 {
+        grid-template-rows: 1fr;
+        grid-template-columns: 60% 40%;
+    }
+      
+    .tabletBezel {
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .tabletScreen {
+        height: 90%;
+        width: 85%;
+        border-radius: 3px;
+    }
+    .homeNav {
+        padding: 1vw 6vw 1vw 3vw;
+    }
+.homeContentSection {
+    padding: 24vw 7vw 0 7vw;
+} 
+h1 {
+    font-size: 2.7rem;
+    line-height: 3rem;
+}
+.bigP{
+    font-size: 1.3rem;
+    line-height: 1.9rem;
+    margin: 5vw 0;
+}  
+.homeContentButtons {
+    display: none;
+}
+/******************************************
+/* =globals.content
+/*******************************************/
+
+
+    /* =globals.content.styles
+    ---------------------------- */
+
+    /* =globals.content.layout
+    ---------------------------- */
+    .socialMediaSection {
+        display: none;
+    }
+
+    .services h2 {
+        font-size: 1.7rem;
+        margin-top: 7vw;
+        line-height: 2rem;
+    }
+    .services h3 {
+        font-size: 1.3rem;
+        margin-top: 7vw;
+    }
+    .servicesInfo p {
+        font-size: 1rem;
+        margin-top: 7vw;
+        line-height: 1.3rem;
+    }
+    .button {
+        margin-top: 12vw;
+    }
+    .services img {
+        display: inline-block;
+        width: 20%;
+    }
+
+    .servicesImageCard{
+        border-radius: 15px;
+        background: #ffffff;
+        box-shadow:  -9px 9px 18px #c9c9c9;
+        margin-top: 20vw;
+        height: 90vw;
+        overflow: hidden;
+        width: 80%;
+
+    }
+    .servicesImageCard span {
+        font-size: 1rem;
+        margin-top: 2.5vw;
+    }
+    .blueBG {
+        background: rgb(43,53,73);
+        background: linear-gradient(to bottom left, rgba(43,53,73,1) 0%, rgba(15,20,33,1) 68%, rgba(11,15,27,1) 100%);
+        height: 50%;
+    }
+    .grayBG {
+            background: #dee0ea;
+            height: 50%;
+    }
+    h4 {
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+    .servicesImageCardInfo {
+        padding: 1.5rem;
+        text-align:center
+    }
+    .servicesImageCard p {
+        margin-top: 3vw;
+        font-size: .9rem;
+        font-weight: 300;
+        line-height: 1.2rem;
+    }
+
+/******************************************
+/* =globals.footer
+/*******************************************/
+
+
+    /* =globals.footer.styles
+    ---------------------------- */
+
+    /* =globals.footer.layout
+    ---------------------------- */
+
+/******************************************
+/* =globals.additionalStyles
+/*******************************************/
+
+    /* =globals.additionalStyles.styles
+    ---------------------------- */
+.blueButton {
+    background: linear-gradient(to bottom left, rgba(43,53,73,1) 0%, rgba(15,20,33,1) 68%, rgba(11,15,27,1) 100%);
+    color: #e1e2e3;
+}
+.blueButton:hover {
+    background: rgb(112,125,152);
+    background: linear-gradient(to bottom left, rgba(112,125,152,1) 0%, rgba(58,71,103,1) 30%, rgba(30,36,52,1) 100%);
+    color: #b9b9b9;
+    font-size: .75rem;
+}
+.grayButton {
+    background-color: #3c424f; 
+    color: #e1e2e3;
+}
+.grayButton:hover {
+    color:#19202f;
+    background-color: white;
+}
+.whiteButton {
+    background-color: #fff; 
+    color: #19202f;
+}
+.whiteButton:hover {
+    color:#e1e2e3;
+    background-color: #3c424f;
+}
+
+    /* =globals.additionalStyles.layout
+    ---------------------------- */
+   /*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+.hamburger {
+    padding: 15px 15px;
+    display: inline-block;
+    cursor: pointer;
+    transition-property: opacity, filter;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    overflow: visible; 
+}
+
+.hamburger:hover {
+    opacity: 0.7; 
+}
+.hamburger.is-active:hover {
+    opacity: 0.7; 
+}
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+    background-color: #fff; 
+}
+
+.hamburger-box {
+    width: 40px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+}
+
+.hamburger-inner {
+    display: block;
+    top: 50%;
+    margin-top: -2px; }
+.hamburger-inner, .hamburger-inner::before, 
+.hamburger-inner::after {
+    width: 40px;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+ }
+.hamburger-inner::before, .hamburger-inner::after {
+    content: "";
+    display: block; 
+}
+.hamburger-inner::before {
+    top: -10px; 
+}
+.hamburger-inner::after {
+    bottom: -10px; 
+}
+.hamburger--spin .hamburger-inner {
+    transition-duration: 0.22s;
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); 
+}
+.hamburger--spin .hamburger-inner::before {
+    transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in; 
+}
+.hamburger--spin .hamburger-inner::after {
+    transition: bottom 0.1s 0.25s ease-in, 
+    transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19); 
+}
+.hamburger--spin.is-active .hamburger-inner {
+    transform: rotate(225deg);
+    transition-delay: 0.12s;
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); 
+}
+.hamburger--spin.is-active .hamburger-inner::before {
+    top: 0;
+    opacity: 0;
+    transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out; 
+}
+.hamburger--spin.is-active .hamburger-inner::after {
+    bottom: 0;
+    transform: rotate(-90deg);
+    transition: bottom 0.1s ease-out,
+    transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); 
+}
+.button {
+    display: inline-block;
+    border-radius: 5px;
+    text-align: center;
+    font-size: .8rem;
+    font-weight: 400;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+}
+.smallButton {
+    width: 7.4vw;
+    padding: 1.6vw 0;
+    text-align: center;
+    margin: 0;
+}
+.longButton {
+    margin: 0 auto;
+    font-weight: 700;
+    width: 60vw;
+    height: 14vw;
+    text-align: center;
+}
+.flexCenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.flexTop {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+img {
+    display: none;
+}
+
+/*/////////////////////////////////////////////////
+///////////////////////////////////////////////////
+//////// =smallMobile (0 - 479px max) ////////////
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+
+
+@media (max-width: 479px) {
+
+    /******************************************
+    /* =smallMobile.header
+    /*******************************************/
+
+
+        /* =smallMobile.header.styles
+        ---------------------------- */
+
+        /* =smallMobile.header.layout
+        ---------------------------- */
+        header {
+            height: 140vw;
+            width: 100%;
+        }
+        .homeBoxTop {
+            height: 140vw;
+        }
+        .services{
+            padding: 7vw 7vw 0 7vw;
+        }
+    /*******************************************/
+    /* =smallMobile.content
+    /*******************************************/
+
+
+        /* =smallMobile.content.styles
+        ---------------------------- */
+
+        /* =smallMobile.content.layout
+        ---------------------------- */
+        .services .button {
+            margin-top: 12vw;
+        }
+    /******************************************
+    /* =smallMobile.footer
+    /*******************************************/
+
+
+    /* =smallMobile.footer.styles
+    ---------------------------- */
+
+    /* =smallMobile.footer.layout
+    ---------------------------- */
+
+
+    /******************************************
+    /* =smallMobile.additionalStyles
+    /*******************************************/
+
+
+    /* =smallMobile.additionalStyles.styles
+    ---------------------------- */
+   
+
+    /* =smallMobile.additionalStyles.layout
+    ---------------------------- */
+
+}
+ /*/////////////////////////////////////////////////
+///////////////////////////////////////////////////
+////// = medMobile (480px min & 599px max) ////////
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+
+
+@media (min-width: 480px) and (max-width: 599px) {
+
+    /******************************************
+    /* = medMobile.header
+    /*******************************************/
+
+
+        /* =medMobile.header.styles
+        ---------------------------- */
+
+
+        header {
+            height: 96vw;
+            width: 100%;
+        }
+        .homeBoxTop {
+            height: 96vw;
+        }
+        .homeContentSection {
+            padding: 20vw 7vw 0vw 5vw;
+        } 
+        .services{
+            padding: 7vw 5vw 0 7vw;
+        }
+        /* =medMobile.header.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =medMobile.content
+    /*******************************************/
+
+
+        /* =medMobile.content.styles
+        ---------------------------- */
+
+        /* =medMobile.content.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =medMobile.footer
+    /*******************************************/
+
+
+        /* =medMobile.footer.styles
+        ---------------------------- */
+
+        /* =medMobile.footer.layout
+        ---------------------------- */
+
+/******************************************
+/* =medMobile.additionalStyles
+/*******************************************/
+
+    /* =smallMobile.additionalStyles.styles
+    ---------------------------- */
+    
+
+    /* =smallMobile.additionalStyles.layout
+    ---------------------------- */
+ 
+}
+
+
+/*/////////////////////////////////////////////////
+///////////////////////////////////////////////////
+/ =smallTabletLargeMobile (600px min & 767px max) /
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+
+
+@media (min-width: 600px) and (max-width: 767px) {
+
+    /******************************************
+    /* =smallTabletLargeMobile.header
+    /*******************************************/
+
+
+    /* =smallTabletLargeMobile.header.styles
+    ---------------------------- */
+    header {
+        height: 83vw;
+        width: 100%;
+    }
+    .homeBoxTop {
+        height: 96vw;
+    }
+    .homeContentSection {
+        padding: 16vw 5vw 0 7vw;
+    } 
+    .homeBoxTop {
+        height: 70vw;
+    }
+    .services{
+        padding: 0 5vw 0 7vw;
+    }
+    .homeBoxClip {
+        top: 70vw;
+    }
+    .clip {
+         clip-path: polygon(0 0, 0% 65%, 100% 0);
+    }
+    /* =smallTabletLargeMobile.header.layout
+     ---------------------------- */
+
+
+    /******************************************
+    /* =smallTabletLargeMobile.content
+    /*******************************************/
+
+
+        /* =smallTabletLargeMobile.content.styles
+        ---------------------------- */
+
+        /* =smallTabletLargeMobile.content.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =smallTabletLargeMobile.footer
+    /*******************************************/
+
+
+        /* =smallTabletLargeMobile.footer.styles
+        ---------------------------- */
+
+        /* =smallTabletLargeMobile.footer.layout
+        ---------------------------- */
+        
+        
+        
+    /******************************************
+    /* =smallTabletLargeMobile.additionalStyles
+    /*******************************************/
+
+    /* =smallMobile.additionalStyles.styles
+    ---------------------------- */
+   
+
+    /* =smallMobile.additionalStyles.layout
+    ---------------------------- */
+
+}
+ 
+ /*/////////////////////////////////////////////////
+///////////////////////////////////////////////////
+/////// =medTablet (768px min & 1023px max) ///////
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    /******************************************
+    /*=medTablet.header
+    /*******************************************/
+
+
+        /* =medTablet.header.styles
+        ---------------------------- */
+
+        /* =medTablet.header.layout
+        ---------------------------- */
+        header {
+            height: 63vw;
+            width: 100%;
+        }
+        .homeContentSection {
+            padding: 16vw 5vw 0 7vw;
+        } 
+        .homeBoxTop {
+            height: 70vw;
+        }
+        .homeBoxClip {
+            top: 70vw;
+        }
+        .homeBoxTop {
+            height: 50vw;
+        }
+        .homeBoxClip {
+            top: 50vw;
+        }
+        .clip {
+            clip-path: polygon(0 0, 0% 65%, 100% 0);
+        }
+        .services{
+            padding: 0 5vw 0 7vw;
+        }
+    /******************************************
+    /* =medTablet.content
+    /*******************************************/
+
+
+        /* =medTablet.content.styles
+        ---------------------------- */
+
+        /* =medTablet.content.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =medTablet.footer
+    /*******************************************/
+
+
+        /* =medTablet.footer.styles
+        ---------------------------- */
+
+        /* =medTablet.footer.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =medTablet.additionalStyles
+    /*******************************************/
+
+
+    /* =smallMobile.additionalStyles.styles
+    ---------------------------- */
+   
+
+    /* =smallMobile.additionalStyles.layout
+    ---------------------------- */
+}
+ /*/////////////////////////////////////////////////
+///////////////////////////////////////////////////
+///// =largeTablet (1024px min & 1279px max) //////
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+
+    /******************************************
+    /* =largeTablet.header
+    /*******************************************/
+
+
+        /* =largeTablet.header.styles
+        ---------------------------- */
+
+        /* =largeTablet.header.layout
+        ---------------------------- */
+        header {
+            height: 1000vw;
+            width: 100%;
+        }
+        .homeContentSection {
+            padding: 16vw 9.8vw 0 9.8vw;
+        } 
+        .homeBoxTop {
+            height: 42vw;
+        }
+        .homeBoxClip {
+            top: 42vw;
+        }
+        .clip {
+            clip-path: polygon(0 0, 0% 65%, 100% 0);
+        }
+        .services{
+            padding: 0 5vw 0 7vw;
+        }
+
+    /******************************************
+    /* =largeTablet.content
+    /*******************************************/
+
+
+        /* =largeTablet.content.styles
+        ---------------------------- */
+
+        /* =largeTablet.content.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =largeTablet.footer
+    /*******************************************/
+
+
+        /* =largeTablet.footer.styles
+        ---------------------------- */
+
+        /* =largeTablet.footer.layout
+        ---------------------------- */
+
+    /******************************************
+    /* =largeTablet.additionalStyles
+    /*******************************************/
+
+
+    /* =smallMobile.additionalStyles.styles
+   
+
+    /* =smallMobile.additionalStyles.layout
+    ---------------------------- */
+ 
+}
+/*/////////////////////////////////////////////////
+///////////////////////////////////////////////////
+/////// =laptop (1280px min & 1439px max) ////////
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+
+
+@media (min-width: 1280px) and (max-width: 1439px) {
+
+    /******************************************
+    /* =laptop.header
+    /*******************************************/
+
+
+        /* =laptop.header.styles
+        ---------------------------- */
+
+        /* =laptop.header.layout
+        ---------------------------- */
+        .homeNav {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            align-items: center;
+            padding: 1% 5%;
+        }
+        .mainMenu {
+            position: static;
+            visibility: visible;
+            display: flex;
+            justify-content: space-between;
+            width: 58.5%;
+        }
+        .homeBoxTop {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 40vw;
+            z-index: -1;
+        }
+        .homeBoxClip {
+            position: absolute;
+            width: 100%;
+            height: 20vw;
+            top: 40vw;
+            z-index: -1;
+        }
+        .clip {
+            clip-path: polygon(0 0, 0% 65%, 100% 0);
+        }
+    /******************************************
+    /* =laptop.content
+    /*******************************************/
+
+
+        /* =laptop.content.styles
+        ---------------------------- */
+
+        /* =laptop.content.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =laptop.footer
+    /*******************************************/
+
+
+        /* =laptop.footer.styles
+        ---------------------------- */
+
+        /* =laptop.footer.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =laptop.additionalStyles
+    /*******************************************/
+
+    .hamburger {
+        display: none;
+    }
+
+
+}
+ 
+
+/*/////////////////////////////////////////////////
+///////////////////////////////////////////////////
+/////// =desktop (1440px min & 2559px max) ////////
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+
+
+@media (min-width: 1440px) and (max-width: 2559px) {
+
+    /******************************************
+    /* =desktop.header
+    /*******************************************/
+
+
+        /* =desktop.header.styles
+        ---------------------------- */
+
+        /* =desktop.header.layout
+        ---------------------------- */
+        .homeNav {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            align-items: center;
+            padding: 1% 5%;
+        }
+        .mainMenu {
+            position: static;
+            visibility: visible;
+            display: flex;
+            justify-content: space-between;
+            width: 58.5%;
+        }
+        .homeBoxTop {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 40vw;
+            z-index: -1;
+        }
+        .homeBoxClip {
+            position: absolute;
+            width: 100%;
+            height: 20vw;
+            top: 40vw;
+            z-index: -1;
+        }
+        .clip {
+            clip-path: polygon(0 0, 0% 65%, 100% 0);
+        }
+
+    /******************************************
+    /* =desktop.content
+    /*******************************************/
+
+
+        /* =desktop.content.styles
+        ---------------------------- */
+
+        /* =desktop.content.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =desktop.footer
+    /*******************************************/
+
+
+        /* =desktop.footer.styles
+        ---------------------------- */
+
+        /* =desktop.footer.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =desktop.additionalStyles
+    /*******************************************/
+
+    .hamburger {
+        display: none;
+    }
+
+
+}
+ 
+
+/*/////////////////////////////////////////////////
+///////////////////////////////////////////////////
+//// =widescreenDesktop (2560 min and no max) /////
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+
+
+@media (min-width: 2560px) {
+
+    /******************************************
+    /* =widescreenDesktop.header
+    /*******************************************/
+
+
+        /* =widescreenDesktop.header.styles
+        ---------------------------- */
+
+        /* =widescreenDesktop.header.layout
+        ---------------------------- */
+        .homeNav {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            align-items: center;
+            padding: 1% 5%;
+        }
+        .mainMenu {
+            position: static;
+            visibility: visible;
+            display: flex;
+            justify-content: space-between;
+            width: 58.5%;
+        }
+        .homeBoxTop {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 40vw;
+            z-index: -1;
+        }
+        .homeBoxClip {
+            position: absolute;
+            width: 100%;
+            height: 20vw;
+            top: 40vw;
+            z-index: -1;
+        }
+        .clip {
+            clip-path: polygon(0 0, 0% 65%, 100% 0);
+        }
+
+    /******************************************
+    /* =widescreenDesktop.content
+    /*******************************************/
+
+
+        /* =widescreenDesktop.content.styles
+        ---------------------------- */
+
+        /* =widescreenDesktop.content.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =widescreenDesktop.footer
+    /*******************************************/
+
+
+        /* =widescreenDesktop.footer.styles
+        ---------------------------- */
+
+        /* =widescreenDesktop.footer.layout
+        ---------------------------- */
+
+
+    /******************************************
+    /* =widescreenDesktop.additionalStyles
+    /*******************************************/
+
+    .hamburger {
+        display: none;
+    }
+
+}
+
+.homesection {
+    width: 100%;
+    height: 10vw;
+    position: relative;
+
+  }
+.homeSection::after {
+    content: '';
+    display: block;
+    position: absolute;
+
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  }
+  .homeNav {
+    display: flex;
+    width: 100%;
+    padding: 3vw 11.5vw 2vw 11.5vw;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    margin: 0 auto;
+    border: 3px solid yellow;
+    align-items: center; 
+    justify-content: space-between;
+}  
+
+
+body{
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    font-size: 1vw;
+}
+header {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    padding: 3vw 11.5vw 2vw 11.5vw;
+}
+.circleIcon {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+.mainMenu{
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    width: 100%;
+}
+.homeNav {
+    width: 65%;
+}

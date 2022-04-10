@@ -1,0 +1,406 @@
+/* Box Model Hack */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+body{
+     font-family: 'Rubik', sans-serif;
+     font-weight: 300;
+}
+header {
+     background-color: #19202f;
+     color:#babec8;
+}
+/*
+
+.diagonal, .diagonalTop {
+     background-color: #19202f;
+}
+nav span {
+     border: white solid 4px;
+}
+.dark{
+     color:#888d95;
+     font-weight: 500;
+     text-transform: uppercase;
+     text-decoration: none;
+}
+.dark:hover {
+     color: #babec8;
+     
+}
+.light {
+     color: #babec8;
+     font-weight: 500;
+     text-transform: uppercase;
+     text-decoration: none;
+}
+.light:hover {
+     color:#888d95;
+}
+.button1 {
+     font-weight: 500;
+     text-transform: uppercase;
+     text-decoration: none;
+     background-color: #3c424f; 
+     color: #e1e2e3;
+}
+.button1:hover {
+     color:#19202f;
+     background-color: white;
+}
+h1 {
+     font-weight: 300;
+     font-size: 2.3rem;
+     color: #eaf5fe;
+     line-height: 125%;
+}
+.descriptionMain p {
+     color: #babec8;
+     font-size: 1.3rem;
+     line-height: 150%;
+
+}
+.contentInfo a{
+     color: #babec8;
+     font-weight: 500;
+     text-transform: uppercase;
+     text-decoration: none;
+}
+.contentInfo .button2, {
+     color:#19202f;
+     font-weight: 700;
+     background-color: white;
+
+}
+.blueButton:hover {
+     background-color: #3c424f; 
+     color: #e1e2e3;
+}
+
+.tablet {
+     background-color: #fbfcfc;
+     border: #fbfcfc;
+     box-shadow: 0px 25px 15px -10px hsla(0, 0%, 0%, 0.12);
+}
+.tabletScreen {
+     background-color: #dee0e9;
+}
+.tabletScreen section {
+     background-color: #19202f;
+     color: #e1e2e3;
+}
+h2 {
+     font-weight: 300;
+     font-size: 1.7rem;
+     line-height: 125%;
+}
+.blueBG {
+     color: #dee0e9;
+     background-color:#19202f;
+}
+.greyBG {
+     background-color:#dee0e9;
+}
+.servicesImageCard {
+     box-shadow: 0px 15px 15px  hsla(0, 0%, 0%, 0.12);
+}
+.infoP {
+     font-weight: 300;
+}
+.blueButton {
+     color: white;
+     font-weight: 500;
+     background-color: #19202f ;
+     text-decoration: none;
+} */
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+/* .flexCenter {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+header {
+     height: 135px;
+     padding: 4% 8%;
+}
+header span {
+     width: 25px;
+     height: 25px;
+     border-radius: 50%;
+}
+header span, header li {
+     display: inline-block;
+}
+nav {
+     width: 100%;
+     display: flex;
+     justify-content: space-between;
+}
+nav ul {
+     width: 60%;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+}
+.button1 {
+     padding: 15px 40px;
+     border-radius: 5px;
+}
+
+.diagonal {
+     width: 100%;
+     position: absolute;
+     z-index: -1;
+     height: 575px;
+     clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+}
+
+
+.descriptionMain {
+     display:flex;
+     justify-content: space-between;
+     padding: 5% 8% 0 8%;
+}
+
+.halfLayout {
+     width: 50%;
+}
+.contentInfo {
+     padding-right: 10%;
+}
+h1 {
+     width: 100%;
+     margin-bottom: 5%;
+}
+.descriptionMain p {
+     margin-bottom: 20%;
+     width: 112%;
+}
+.button2 {
+     padding: 15px 40px;
+     border-radius: 5px;
+}
+
+.button3, .button4, .button5 {
+     width: 12vw;
+     padding: 15px 20px;
+     border-radius: 5px;
+     text-align: center;
+}
+.button5 {
+     border-radius: 2px;
+}
+.contentInfo a + a{
+     padding-left: 10%;
+}
+.contentInfo span {
+     margin-right: 5%;
+     font-weight: 300;
+     font-size: 1.3rem;
+}
+.tablet {
+     width: 40vw;
+     height: 28vw;
+     border-radius: 25px;
+     padding: 3% 8%;
+     margin-left: 5%; 
+}
+.tabletScreen {
+     height: 100%;
+     width: 100%;
+}
+.imagePlaceholder {
+     flex-direction: column;
+     height: 30%;
+     width: 33%;
+     border-radius: 2px;
+}
+.tabletScreen span {
+     margin-top: 8%;
+}
+.tablet img {
+     width: 40px;
+     height: auto;
+}
+.socialMedia {
+     padding: 8%;
+     display: flex;
+     justify-content: right;
+}
+.socialMedia ul {
+     width: 70%;
+}
+.socialMedia li {
+     display: inline-block;
+}
+.socialMedia img {
+     height: 40px;
+     width: auto;
+}
+.services {
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     justify-content: space-between;
+     padding: 0 8%;
+}
+.servicesLeft {
+     margin-top: 7%;
+}
+.servicesInfo {
+     max-width: 500px;
+     min-width: 420px;
+}
+.infoP h2, .infoP p, .infoP h4 {
+     padding-bottom: 3%;
+}
+.infoP {
+     line-height: 160%;
+}
+.services img, .placeholder img {
+     width: 35px;
+     height: auto;
+     position: relative;
+     top: 2%;
+}
+.servicesLeft {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+}
+.button3 {
+     margin-bottom: 25%;
+}
+.servicesImageGroup {
+     display: flex;
+     text-align: center;
+     flex-wrap: wrap;
+     width: 40vw;
+     justify-content: space-evenly;
+}
+.servicesImageCard {
+     flex-direction: column;
+     align-items: center;
+     min-width: 250px;
+     min-height: 280px;
+     width: 17vw;
+     height: 20vw;
+     margin: 2% 0 5% 5%;
+     border-radius: 5px;
+     overflow: hidden;
+}
+.servicesImageCardInfo {
+     flex-direction: column;
+     align-items: center;
+     padding: 1% 5%;
+}
+.servicesImage {
+     height: 66.66%;
+     flex-direction: column;
+     align-items: center;
+     margin-bottom: 5%;
+}
+
+.servicesImage span, .placeholder span{
+     display: inline-block;
+     padding-top: 3%;
+     position: relative;
+     top: 2%;
+}
+.services {
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     justify-content: space-between;
+     padding: 0 8%;
+}
+.bigExampleSection {
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     justify-content: space-between;
+     padding: 10% 8%;
+}
+.imageExample {
+     background-color:#dee0e9;
+     border-radius: 5px;
+     height: 30vw;
+     width: 42%;
+}
+.moreInfo {
+     padding-right: 15%;
+     margin-bottom: 5%;
+}
+.infoRight {
+     width: 50%;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     height: 30vw;
+}
+.placeholder {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     height: 25%;
+     width: 30%;
+     border-radius: 2px;
+}
+.accountList {
+     display: flex;
+     flex-direction: column;
+     width: 40vw;
+     margin-top: 5%;
+}
+.accountList h4 {
+     padding-bottom: 0;
+}
+.accountListSide {
+     padding: 1% 2%;
+}
+.accountListItem {
+     display: flex;
+     margin-bottom: 5%;
+}
+.box {
+     border:#19202f solid 3px;
+     border-radius: 5px;
+     height: 30px;
+     width: 30px;
+}
+h3 {
+     font-size: 1rem;
+     font-weight: 400;
+     color: #5a697b;
+     margin-bottom: 1%;
+}
+.moreInfo h2 {
+     width: 60%;
+}
+.accountInfo h2 {
+     width: 100%;
+}
+.diagonalTop {
+     width: 100%;
+     height: 150px;
+     clip-path: polygon(100% 3%, 0 100%, 100% 100%);
+}
+.allFeatures {
+     background-color: #19202f;
+     height: 500px;
+} */
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
